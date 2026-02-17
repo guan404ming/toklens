@@ -12,6 +12,7 @@ TokLens is a multilingual tokenizer analysis toolkit. Pure Python, no GPU.
 - Build: pyproject.toml (src layout)
 - Testing: pytest
 - Linting: ruff
+- Type checking: ty (astral-sh/ty)
 
 ## Code Style
 
@@ -32,14 +33,15 @@ src/toklens/
 ├── metrics.py       # All metric implementations
 ├── corpora.py       # Built-in multilingual test data
 ├── compare.py       # Two-tokenizer comparison
-└── report.py        # Output: tables, plots, LaTeX
+├── report.py        # Output: tables, plots, LaTeX
+└── cli.py           # Command-line interface
 ```
 
 ## Key Design Decisions
 
 - HuggingFace tokenizers handles all tokenization (already Rust-backed)
 - TokLens only computes statistics on token IDs, no need for Rust
-- Corpora are bundled as small text files, not downloaded at runtime
+- Corpora loaded from FLORES-200 via HF datasets, cached locally
 - All metrics return plain dicts or numpy arrays, not custom classes
 
 ## Commands
@@ -47,3 +49,4 @@ src/toklens/
 - `uv run pytest` - run tests
 - `uv run ruff check .` - lint
 - `uv run ruff format .` - format
+- `uvx ty check` - type check
