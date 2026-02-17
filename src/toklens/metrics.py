@@ -6,6 +6,19 @@ import numpy as np
 from tokenizers import Tokenizer
 
 
+def _encode(tokenizer: Tokenizer, text: str) -> list[int]:
+    """Encode text without special tokens for fair comparison.
+
+    Some tokenizers (Llama, Gemma, Mistral, etc.) add BOS/EOS tokens by default.
+    We strip them to measure raw tokenization quality.
+    """
+    try:
+        return tokenizer.encode(text, add_special_tokens=False).ids
+    except TypeError:
+        # Shim or tokenizer that doesn't accept add_special_tokens
+        return tokenizer.encode(text).ids
+
+
 def fertility(tokens_per_word: list[list[int]], words: list[list[str]]) -> dict[str, float]:
     """Compute fertility (average tokens per word) per language.
 
@@ -30,8 +43,8 @@ def _tokenize_words(
     words = text.split()
     token_counts = []
     for word in words:
-        encoded = tokenizer.encode(word)
-        token_counts.append(len(encoded.ids))
+        ids = _encode(tokenizer, word)
+        token_counts.append(len(ids))
     return words, token_counts
 
 
@@ -51,11 +64,10 @@ def compute_cpt(tokenizer: Tokenizer, text: str) -> float:
 
     CPT = total characters / total tokens. Higher means coarser granularity.
     """
-    encoded = tokenizer.encode(text)
-    n_tokens = len(encoded.ids)
-    if n_tokens == 0:
+    ids = _encode(tokenizer, text)
+    if not ids:
         return 0.0
-    return len(text) / n_tokens
+    return len(text) / len(ids)
 
 
 def compute_compression_ratio(tokenizer: Tokenizer, text: str) -> float:
@@ -63,12 +75,11 @@ def compute_compression_ratio(tokenizer: Tokenizer, text: str) -> float:
 
     Compression ratio = bytes / tokens. Higher means better compression.
     """
-    encoded = tokenizer.encode(text)
-    n_tokens = len(encoded.ids)
-    if n_tokens == 0:
+    ids = _encode(tokenizer, text)
+    if not ids:
         return 0.0
     n_bytes = len(text.encode("utf-8"))
-    return n_bytes / n_tokens
+    return n_bytes / len(ids)
 
 
 def compute_strr(tokenizer: Tokenizer, text: str) -> float:
@@ -89,13 +100,12 @@ def compute_nsl(tokenizer: Tokenizer, text: str, ref_length: int | None = None) 
     NSL = tokenized length / reference length.
     If ref_length is not provided, uses character count as reference.
     """
-    encoded = tokenizer.encode(text)
-    n_tokens = len(encoded.ids)
+    ids = _encode(tokenizer, text)
     if ref_length is None:
         ref_length = len(text)
     if ref_length == 0:
         return 0.0
-    return n_tokens / ref_length
+    return len(ids) / ref_length
 
 
 def compute_parity(
@@ -108,12 +118,11 @@ def compute_parity(
     Parity = len(tokenize(text)) / len(tokenize(ref_text)).
     A value close to 1.0 means the tokenizer treats both languages similarly.
     """
-    encoded = tokenizer.encode(text)
-    ref_encoded = tokenizer.encode(ref_text)
-    ref_len = len(ref_encoded.ids)
-    if ref_len == 0:
+    ids = _encode(tokenizer, text)
+    ref_ids = _encode(tokenizer, ref_text)
+    if not ref_ids:
         return 0.0
-    return len(encoded.ids) / ref_len
+    return len(ids) / len(ref_ids)
 
 
 def compute_vocab_overlap(tokenizer_a: Tokenizer, tokenizer_b: Tokenizer) -> dict[str, int]:

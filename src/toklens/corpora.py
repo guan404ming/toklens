@@ -4,80 +4,94 @@ from __future__ import annotations
 
 from datasets import load_dataset
 
-# FLORES-200 language codes for common languages
-LANG_CODES: dict[str, str] = {
-    "en": "eng_Latn",
-    "zh": "zho_Hans",
-    "ja": "jpn_Jpan",
-    "ar": "arb_Arab",
-    "hi": "hin_Deva",
-    "de": "deu_Latn",
-    "tr": "tur_Latn",
-    "ko": "kor_Hang",
-    "th": "tha_Thai",
-    "ru": "rus_Cyrl",
-    "fr": "fra_Latn",
-    "es": "spa_Latn",
-    "pt": "por_Latn",
-    "vi": "vie_Latn",
-    "id": "ind_Latn",
+# Wikipedia language codes
+WIKI_CODES: dict[str, str] = {
+    "en": "20231101.en",
+    "zh": "20231101.zh",
+    "ja": "20231101.ja",
+    "ar": "20231101.ar",
+    "hi": "20231101.hi",
+    "de": "20231101.de",
+    "tr": "20231101.tr",
+    "ko": "20231101.ko",
+    "th": "20231101.th",
+    "ru": "20231101.ru",
+    "fr": "20231101.fr",
+    "es": "20231101.es",
+    "pt": "20231101.pt",
+    "vi": "20231101.vi",
+    "id": "20231101.id",
 }
+
+# Number of articles to sample per language
+DEFAULT_N_ARTICLES = 100
 
 _cache: dict[str, list[str]] = {}
 
 
-def get_flores_code(lang: str) -> str:
-    """Convert a short language code to FLORES-200 code."""
-    if lang in LANG_CODES:
-        return LANG_CODES[lang]
-    # Assume it's already a FLORES-200 code
-    return lang
-
-
-def get_texts(lang: str, split: str = "devtest") -> list[str]:
-    """Load texts for a language from FLORES-200.
+def get_texts(
+    lang: str,
+    n_articles: int = DEFAULT_N_ARTICLES,
+    max_chars: int = 50000,
+) -> list[str]:
+    """Load texts for a language from Wikipedia.
 
     Args:
-        lang: Language code (e.g., "en", "zh") or FLORES-200 code.
-        split: Dataset split. Default "devtest" (1012 sentences).
+        lang: Language code (e.g., "en", "zh").
+        n_articles: Number of articles to load.
+        max_chars: Approximate total character budget.
 
     Returns:
-        List of sentences.
+        List of text chunks.
     """
-    flores_code = get_flores_code(lang)
-    cache_key = f"{flores_code}_{split}"
-
+    cache_key = f"wiki_{lang}_{n_articles}"
     if cache_key in _cache:
         return _cache[cache_key]
 
-    ds = load_dataset(
-        "openlanguagedata/flores_plus",
-        name=flores_code,
-        split=split,
-        trust_remote_code=True,
-    )
-    texts = [row["text"] for row in ds]
+    wiki_code = WIKI_CODES.get(lang)
+    if wiki_code is None:
+        raise ValueError(f"Unsupported language: {lang}. Available: {available_languages()}")
+
+    ds = load_dataset("wikimedia/wikipedia", wiki_code, split="train", streaming=True)
+
+    texts = []
+    total_chars = 0
+    for i, row in enumerate(ds):
+        if i >= n_articles or total_chars >= max_chars:
+            break
+        text = row["text"].strip()
+        if len(text) > 100:  # skip very short articles
+            texts.append(text)
+            total_chars += len(text)
+
     _cache[cache_key] = texts
     return texts
 
 
 def get_parallel_texts(
-    langs: list[str], split: str = "devtest"
+    langs: list[str],
+    n_articles: int = DEFAULT_N_ARTICLES,
+    max_chars: int = 50000,
 ) -> dict[str, list[str]]:
-    """Load parallel texts for multiple languages.
+    """Load texts for multiple languages.
 
-    Sentences at the same index are translations of each other.
+    Note: Wikipedia texts are NOT parallel (not translations of each other).
+    Parity is computed by comparing total tokenized lengths.
 
     Args:
         langs: List of language codes.
-        split: Dataset split.
+        n_articles: Number of articles per language.
+        max_chars: Character budget per language.
 
     Returns:
-        Dict mapping language code to list of sentences.
+        Dict mapping language code to list of texts.
     """
-    return {lang: get_texts(lang, split) for lang in langs}
+    return {
+        lang: get_texts(lang, n_articles=n_articles, max_chars=max_chars)
+        for lang in langs
+    }
 
 
 def available_languages() -> list[str]:
     """Return list of supported short language codes."""
-    return sorted(LANG_CODES.keys())
+    return sorted(WIKI_CODES.keys())
