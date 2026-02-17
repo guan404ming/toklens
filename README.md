@@ -63,15 +63,15 @@ report.plot()       # matplotlib visualization
 report.to_latex()   # LaTeX table for papers
 ```
 
-## Built-in Corpora
+## Corpora
 
-TokLens ships with curated multilingual test texts covering:
+TokLens uses [FLORES-200](https://github.com/facebookresearch/flores) as its default multilingual corpus:
 
-- **Languages**: English, Chinese, Japanese, Arabic, Hindi, German, Turkish, Korean, Thai, Russian (expandable)
-- **Domains**: formal (Wikipedia/news) and informal (social media/conversational)
-- **Parallel texts**: aligned sentence pairs for parity computation
+- **200+ languages** with parallel sentences (parity ratio ready)
+- **Standard benchmark** in tokenizer research (CC-BY-SA 4.0)
+- **Auto-downloaded** and cached locally via HuggingFace datasets
 
-Corpora are small (a few MB total) and bundled with the package.
+Users can also evaluate on custom text via `Analyzer.evaluate_text()`.
 
 ## Project Structure
 
@@ -84,10 +84,7 @@ toklens/
 │   ├── corpora.py       # Built-in multilingual test data
 │   ├── compare.py       # Two-tokenizer comparison
 │   └── report.py        # Output: tables, plots, LaTeX
-├── corpora/
-│   ├── en/
-│   ├── zh/
-│   └── ...
+├── data/                    # cached corpora (gitignored)
 ├── tests/
 ├── pyproject.toml
 └── README.md
@@ -96,6 +93,7 @@ toklens/
 ## Dependencies
 
 - `tokenizers` (HuggingFace, Rust-backed, handles the heavy tokenization)
+- `datasets` (HuggingFace, for loading FLORES-200)
 - `numpy` (metric computation)
 - `matplotlib` (optional, visualization)
 
