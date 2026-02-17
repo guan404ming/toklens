@@ -4,7 +4,7 @@ A diagnostic toolkit for multilingual tokenizer analysis. TokLens provides a uni
 
 ## Motivation
 
-Every multilingual tokenizer paper reimplements the same metrics (fertility, STRR, parity) as one-off scripts. No general-purpose, installable library exists. Meanwhile, recent work (NAACL 2024) shows that common metrics like fertility and parity don't always predict downstream performance, raising the question: **which tokenizer metrics actually matter?**
+Every multilingual tokenizer paper reimplements the same metrics (fertility, STRR, parity) as one-off scripts. Existing tools like Qtok focus on vocabulary-level introspection (Unicode coverage, script distribution) but do not compute text-level metrics. Meanwhile, recent work (NAACL 2024) shows that common metrics like fertility and parity don't always predict downstream performance, raising the question: **which tokenizer metrics actually matter?**
 
 TokLens aims to:
 1. Provide a standard toolkit so researchers stop reimplementing metrics
@@ -26,6 +26,7 @@ TokLens aims to:
 | NSL | Multiple | Normalized Sequence Length. Length-normalized comparison across tokenizers. |
 | Compression Ratio | Multiple | Bytes per token. Raw efficiency measure. |
 | Vocab Overlap | New | Intersection of two tokenizer vocabularies. |
+| IPS | SampoNLP 2025 | Integrated Performance Score. Balances morpheme coverage vs over-splitting. |
 | TBD: new metrics | This work | Metrics with stronger predictive power for downstream performance. |
 
 ## API Design
@@ -125,11 +126,30 @@ No GPU required. Runs on any machine.
 
 ## Related Work
 
-- "How Good is Your Tokenizer?" (ACL 2021) - 400+ citations, foundational
-- "Tokenizer Choice: Negligible or Crucial?" (NAACL 2024) - fertility/parity not always predictive
-- "Beyond Fertility: Analyzing STRR" (arXiv 2510.09947) - proposes STRR metric
-- TokSuite (arXiv 2512.20757) - controlled experiments on tokenizer impact
+### Foundational
+
+- [How Good is Your Tokenizer?](https://aclanthology.org/2021.acl-long.243/) (ACL 2021) - 400+ citations, defines fertility metric
+- [Tokenizer Choice: Negligible or Crucial?](https://aclanthology.org/2024.findings-naacl.247/) (NAACL 2024) - shows fertility/parity not always predictive of downstream performance
+
+### Metrics and Evaluation (2025-2026)
+
+- [Beyond Fertility: Analyzing STRR](https://arxiv.org/abs/2510.09947) (arXiv, Oct 2025) - proposes Single Token Retention Rate metric
+- [TokSuite](https://arxiv.org/abs/2512.20757) (arXiv, Dec 2025) - 14 controlled models to isolate tokenizer impact
+- [Tokenization Disparities as Infrastructure Bias](https://arxiv.org/abs/2510.12389) (arXiv, Oct 2025) - fairness analysis across 200+ languages with FLORES-200
+- [Evaluating Morphological Alignment of Tokenizers in 70 Languages](https://arxiv.org/abs/2507.06378) (arXiv, Jul 2025) - morphological alignment evaluation
+- [Stop Taking Tokenizers for Granted](https://arxiv.org/abs/2601.13260) (arXiv, Jan 2026) - position paper arguing tokenizers are core design decisions
+
+### Toolkits
+
+- [Qtok](https://github.com/nup-csai/Qtok) (arXiv 2410.12989, Oct 2024) - vocabulary-level analysis (Unicode coverage, script distribution). Does **not** compute fertility, STRR, parity, CPT, or compression ratio. Complementary to TokLens.
+- [SampoNLP](https://arxiv.org/abs/2601.04469) (arXiv, Jan 2025) - morphological lexicon toolkit for Uralic languages, proposes IPS metric
 - tokviz - visualization only, 12 stars, inactive
+
+### Cross-lingual Tokenizer Design
+
+- [Parallel Tokenizers](https://arxiv.org/abs/2510.06128) (arXiv, Oct 2025) - cross-lingual vocabulary alignment via bilingual dictionaries
+- [Comparative analysis of subword tokenization for Indian languages](https://arxiv.org/abs/2505.16868) (arXiv, May 2025)
+- [Entropy-Driven Pre-Tokenization for BPE](https://arxiv.org/abs/2506.15889) (arXiv, Jun 2025)
 
 ## License
 
