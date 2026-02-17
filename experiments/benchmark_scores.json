@@ -1,0 +1,310 @@
+{
+  "openai-community/gpt2": {
+    "display_name": "GPT-2",
+    "params_b": 0.1,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 17.795449407571912,
+      "BBH": 2.8159113095085133,
+      "MATH_Lvl5": 0.5287009063444109,
+      "GPQA": 1.1185682326621946,
+      "MUSR": 13.910937500000001,
+      "MMLU_PRO": 1.8358451536643017,
+      "Average": 6.33423541829189
+    }
+  },
+  "meta-llama/Llama-2-7b-hf": {
+    "display_name": "Llama-2-7B",
+    "params_b": 6.7,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 25.18938638368418,
+      "BBH": 10.35141665784897,
+      "MATH_Lvl5": 1.7371601208459215,
+      "GPQA": 2.2371364653243813,
+      "MUSR": 3.7578125,
+      "MMLU_PRO": 9.56523345153664,
+      "Average": 8.806357596540016
+    }
+  },
+  "meta-llama/Llama-3.1-8B": {
+    "display_name": "Llama-3.1-8B",
+    "params_b": 8.0,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 12.459828809780273,
+      "BBH": 25.30447063475493,
+      "MATH_Lvl5": 6.570996978851963,
+      "GPQA": 8.05369127516779,
+      "MUSR": 8.715104166666668,
+      "MMLU_PRO": 25.42109929078014,
+      "Average": 14.42086519266696
+    }
+  },
+  "Qwen/Qwen2.5-1.5B": {
+    "display_name": "Qwen2.5-1.5B",
+    "params_b": 1.5,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 26.743041795768562,
+      "BBH": 16.660465167691854,
+      "MATH_Lvl5": 9.138972809667674,
+      "GPQA": 4.697986577181204,
+      "MUSR": 5.265885416666666,
+      "MMLU_PRO": 20.609855200945624,
+      "Average": 13.852701161320264
+    }
+  },
+  "Qwen/Qwen2.5-3B": {
+    "display_name": "Qwen2.5-3B",
+    "params_b": 3.1,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 26.895415275912356,
+      "BBH": 24.304241726371686,
+      "MATH_Lvl5": 14.803625377643503,
+      "GPQA": 6.375838926174497,
+      "MUSR": 11.758333333333335,
+      "MMLU_PRO": 24.479166666666664,
+      "Average": 18.102770217683673
+    }
+  },
+  "Qwen/Qwen2.5-7B": {
+    "display_name": "Qwen2.5-7B",
+    "params_b": 7.6,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 33.74479713825982,
+      "BBH": 35.81347328754777,
+      "MATH_Lvl5": 25.075528700906347,
+      "GPQA": 9.955257270693513,
+      "MUSR": 14.13671875,
+      "MMLU_PRO": 37.38918439716312,
+      "Average": 26.019159924095096
+    }
+  },
+  "Qwen/Qwen2.5-14B": {
+    "display_name": "Qwen2.5-14B",
+    "params_b": 14.8,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 36.94464022127954,
+      "BBH": 45.078312404984935,
+      "MATH_Lvl5": 29.003021148036257,
+      "GPQA": 17.561521252796418,
+      "MUSR": 15.913281249999997,
+      "MMLU_PRO": 47.205599881796694,
+      "Average": 31.951062693148973
+    }
+  },
+  "google/gemma-2-9b": {
+    "display_name": "Gemma-2-9B",
+    "params_b": 9.0,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 20.398320899657357,
+      "BBH": 34.09681853589784,
+      "MATH_Lvl5": 13.444108761329304,
+      "GPQA": 10.514541387024611,
+      "MUSR": 14.297656250000001,
+      "MMLU_PRO": 34.48027482269504,
+      "Average": 21.205286776100692
+    }
+  },
+  "mistralai/Mistral-7B-v0.3": {
+    "display_name": "Mistral-7B-v0.3",
+    "params_b": 7.2,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 22.663976028050016,
+      "BBH": 24.03725427191849,
+      "MATH_Lvl5": 3.0211480362537766,
+      "GPQA": 5.592841163310966,
+      "MUSR": 8.363802083333333,
+      "MMLU_PRO": 21.699541962174944,
+      "Average": 14.229760590840252
+    }
+  },
+  "mistralai/Mistral-Nemo-Base-2407": {
+    "display_name": "Mistral-Nemo-12B",
+    "params_b": 11.6,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 16.299197241098064,
+      "BBH": 29.374736440966874,
+      "MATH_Lvl5": 5.966767371601208,
+      "GPQA": 5.8165548098433995,
+      "MUSR": 6.516927083333336,
+      "MMLU_PRO": 27.46195330969267,
+      "Average": 15.239356042755924
+    }
+  },
+  "microsoft/Phi-3-mini-4k-instruct": {
+    "display_name": "Phi-3-mini",
+    "params_b": 3.8,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 54.76746144673909,
+      "BBH": 36.55985530518785,
+      "MATH_Lvl5": 16.389728096676738,
+      "GPQA": 10.96196868008949,
+      "MUSR": 13.118749999999997,
+      "MMLU_PRO": 33.57528073286053,
+      "Average": 27.562174043592282
+    }
+  },
+  "microsoft/phi-4": {
+    "display_name": "Phi-4",
+    "params_b": 14.7,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 5.852693076592331,
+      "BBH": 52.42784845820486,
+      "MATH_Lvl5": 31.64652567975831,
+      "GPQA": 20.805369127516784,
+      "MUSR": 23.7859375,
+      "MMLU_PRO": 47.630393026004725,
+      "Average": 30.35812781134617
+    }
+  },
+  "01-ai/Yi-1.5-9B": {
+    "display_name": "Yi-1.5-9B",
+    "params_b": 8.8,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 29.358435617494916,
+      "BBH": 30.50071699492122,
+      "MATH_Lvl5": 11.404833836858005,
+      "GPQA": 17.225950782997764,
+      "MUSR": 12.030989583333332,
+      "MMLU_PRO": 32.402482269503544,
+      "Average": 22.153901514184795
+    }
+  },
+  "tiiuae/falcon-7b": {
+    "display_name": "Falcon-7B",
+    "params_b": 7.0,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 18.205140139274903,
+      "BBH": 5.963936911876051,
+      "MATH_Lvl5": 0.9818731117824773,
+      "GPQA": 0.0,
+      "MUSR": 4.497135416666667,
+      "MMLU_PRO": 1.392582742316784,
+      "Average": 5.1734447203194796
+    }
+  },
+  "bigscience/bloom-7b1": {
+    "display_name": "BLOOM-7B",
+    "params_b": 7.1,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 13.221696210499253,
+      "BBH": 4.038808518979752,
+      "MATH_Lvl5": 0.5287009063444109,
+      "GPQA": 1.9015659955257262,
+      "MUSR": 1.920572916666666,
+      "MMLU_PRO": 1.1617169030732852,
+      "Average": 3.795510241848182
+    }
+  },
+  "CohereForAI/c4ai-command-r-v01": {
+    "display_name": "Command-R-35B",
+    "params_b": 35.0,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 67.48194789824333,
+      "BBH": 34.556659257058264,
+      "MATH_Lvl5": 3.474320241691843,
+      "GPQA": 7.606263982102905,
+      "MUSR": 16.12890625,
+      "MMLU_PRO": 26.326093380614658,
+      "Average": 25.929031834951832
+    }
+  },
+  "stabilityai/stablelm-2-12b": {
+    "display_name": "StableLM-2-12B",
+    "params_b": 12.1,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 15.69214129620518,
+      "BBH": 22.685797482043984,
+      "MATH_Lvl5": 4.305135951661631,
+      "GPQA": 3.8031319910514525,
+      "MUSR": 14.485677083333334,
+      "MMLU_PRO": 23.020094562647756,
+      "Average": 13.998663061157224
+    }
+  },
+  "THUDM/glm-4-9b": {
+    "display_name": "GLM-4-9B",
+    "params_b": 9.0,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 14.260827936541709,
+      "BBH": 35.811283581208905,
+      "MATH_Lvl5": 0.0,
+      "GPQA": 8.83668903803132,
+      "MUSR": 14.189583333333331,
+      "MMLU_PRO": 34.94200650118203,
+      "Average": 18.006731731716215
+    }
+  },
+  "allenai/OLMo-2-1124-7B-Instruct": {
+    "display_name": "OLMo-2-7B",
+    "params_b": 7.3,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 72.44034716773716,
+      "BBH": 16.326772949551835,
+      "MATH_Lvl5": 14.879154078549849,
+      "GPQA": 3.8031319910514525,
+      "MUSR": 4.687499999999999,
+      "MMLU_PRO": 18.578235815602834,
+      "Average": 21.785857000415522
+    }
+  },
+  "internlm/internlm2_5-7b-chat": {
+    "display_name": "InternLM2.5-7B",
+    "params_b": 7.7,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 55.386928904196424,
+      "BBH": 57.04314320825679,
+      "MATH_Lvl5": 25.302114803625376,
+      "GPQA": 12.975391498881436,
+      "MUSR": 16.28984375,
+      "MMLU_PRO": 30.851063829787233,
+      "Average": 32.974747665791206
+    }
+  },
+  "HuggingFaceTB/SmolLM2-1.7B": {
+    "display_name": "SmolLM2-1.7B",
+    "params_b": 1.7,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 24.40003634800108,
+      "BBH": 9.301788459551682,
+      "MATH_Lvl5": 2.643504531722054,
+      "GPQA": 3.9149888143176734,
+      "MUSR": 4.601041666666668,
+      "MMLU_PRO": 12.640366430260045,
+      "Average": 9.583621041753199
+    }
+  },
+  "Qwen/Qwen2.5-0.5B": {
+    "display_name": "Qwen2.5-0.5B",
+    "params_b": 0.5,
+    "source": "https://huggingface.co/datasets/open-llm-leaderboard/contents",
+    "benchmarks": {
+      "IFEval": 16.271714606133948,
+      "BBH": 6.953961634882263,
+      "MATH_Lvl5": 3.927492447129909,
+      "GPQA": 0.0,
+      "MUSR": 2.0833333333333326,
+      "MMLU_PRO": 10.0639036643026,
+      "Average": 6.550067614297009
+    }
+  }
+}
