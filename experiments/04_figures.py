@@ -237,7 +237,7 @@ def _lang_heatmap(
         for _, data in items
     ])
 
-    fig, ax = plt.subplots(figsize=(12, max(6, len(tokenizer_names) * 0.4)))
+    fig, ax = plt.subplots(figsize=(9, max(6, len(tokenizer_names) * 0.45)))
     im = ax.imshow(matrix, cmap=cmap, aspect="auto", vmin=vmin, vmax=vmax)
 
     ax.set_xticks(range(len(langs)))
@@ -254,7 +254,6 @@ def _lang_heatmap(
                 ax.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=5.5)
 
     fig.colorbar(im, label=cbar_label, shrink=0.8)
-    ax.set_title(title)
     fig.tight_layout()
     fig.savefig(save_path, dpi=300, bbox_inches="tight")
     plt.close(fig)

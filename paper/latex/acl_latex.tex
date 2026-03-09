@@ -11,6 +11,8 @@
 \usepackage{inconsolata}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{float}
+\usepackage{caption}
 
 \title{TokLens: A Multilingual Lens on Tokenizer Quality for Large Language Models}
 
@@ -21,7 +23,7 @@
 \maketitle
 
 \begin{abstract}
-Tokenizer design is a foundational but underexamined component of large language model (LLM) development. We introduce TokLens, an open-source toolkit for evaluating tokenizer quality across languages using six intrinsic metrics: fertility, characters per token, compression ratio, normalized sequence length, single-token retention rate, and cross-lingual parity. We evaluate 24 tokenizers from major LLM families across 15 typologically diverse languages and correlate intrinsic metrics with downstream performance on the Open LLM Leaderboard v2. Our analysis reveals stark cross-lingual disparities: GPT-2's tokenizer produces 56x more tokens per word in Japanese than in English, while newer tokenizers like Qwen2.5 and Gemma-2 reduce this gap to under 4x. No intrinsic metric predicts English benchmark performance after controlling for model size. However, when we extend the analysis to multilingual benchmarks (MMLU-ProX), tokenizer metrics such as single-token retention rate and characters per token significantly predict per-language performance ($\rho > 0.4$, $p < 0.001$), even after controlling for model size. This suggests that tokenizer quality is a necessary but insufficient condition for strong LLM performance, with its impact most visible in multilingual settings.
+Tokenizer design is a foundational but underexamined component of large language model (LLM) development. We introduce TokLens, an open-source toolkit for evaluating tokenizer quality across languages using six intrinsic metrics: fertility, characters per token, compression ratio, normalized sequence length, single-token retention rate, and cross-lingual parity. We evaluate 24 tokenizers from major LLM families across 15 typologically diverse languages and correlate intrinsic metrics with downstream performance on the Open LLM Leaderboard v2. Our analysis reveals stark cross-lingual disparities: GPT-2's tokenizer produces 56x more tokens per word in Japanese than in English, while newer tokenizers like Qwen2.5 and Gemma-2 reduce this gap to under 4x. No intrinsic metric predicts English benchmark performance after controlling for model size. However, when we extend the analysis to multilingual benchmarks (MMLU-ProX) using linear mixed-effects models that account for repeated measures within models, tokenizer metrics significantly predict per-language performance (STRR: $\beta = +5.7$, $z = 18.5$, $p < 0.001$). A controlled experiment with the Qwen2.5 family, which shares a single tokenizer across five model sizes, reveals that languages with higher single-token retention rate benefit more from scaling ($\rho = 0.91$, $p < 0.001$). These results suggest that tokenizer quality has a measurable impact on multilingual LLM performance, even when model architecture and training pipeline are held constant.
 \end{abstract}
 
 \section{Introduction}
@@ -37,7 +39,7 @@ We present TokLens, a lightweight, open-source Python toolkit that computes six 
 \begin{enumerate}
     \item An open-source toolkit for systematic tokenizer evaluation with six complementary metrics across 15 languages.
     \item A comprehensive evaluation of 24 tokenizers from 2019--2025, documenting the evolution of multilingual tokenizer quality.
-    \item A correlation analysis showing that tokenizer metrics do not predict English benchmarks after controlling for model size, but significantly predict multilingual performance (MMLU-ProX) with partial correlations up to $\rho = 0.48$.
+    \item A three-tier statistical analysis: (a) English benchmarks show no significant correlation after Bonferroni correction; (b) multilingual benchmarks (MMLU-ProX) show significant effects via linear mixed-effects models ($z$ up to 18.5); (c) a controlled experiment with the Qwen2.5 family confirms that tokenizer quality modulates scaling benefits across languages ($\rho = 0.91$).
 \end{enumerate}
 
 \section{Related Work}
@@ -141,14 +143,7 @@ Among Latin-script languages, parity ratios are generally low (1.0--2.5x) across
 
 \subsection{Fertility and STRR Across Languages}
 
-Figure~\ref{fig:fertility} shows fertility across languages. English fertility ranges from 1.2 (Gemma-2) to 1.6 (GPT-2). For Japanese, the range is dramatic: 91.1 for GPT-2 versus 3.5 for Gemma-2. The extreme GPT-2 values arise from byte-level fallback: Japanese characters require 3 UTF-8 bytes each, so a single character becomes 3 tokens when no vocabulary entry matches.
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{fig4_fertility_by_lang.pdf}
-    \caption{Fertility (tokens per word) across 24 tokenizers and 15 languages. CJK languages and Thai show the largest variation. Newer tokenizers with larger vocabularies dramatically reduce fertility for non-Latin scripts.}
-    \label{fig:fertility}
-\end{figure*}
+Fertility varies enormously across languages (Appendix~\ref{app:fertility}). English fertility ranges from 1.2 (Gemma-2) to 1.6 (GPT-2). For Japanese, the range is dramatic: 91.1 for GPT-2 versus 3.5 for Gemma-2, driven by byte-level fallback where each Japanese character (3 UTF-8 bytes) becomes 3 tokens when no vocabulary entry matches.
 
 Korean is an interesting case: it uses a phonetic alphabet (Hangul) with compositional syllable blocks. Tokenizers with good Unicode handling (Qwen2.5, Gemma-2) achieve fertility of 2--4, while byte-fallback tokenizers (GPT-2, Falcon) produce 8--9 because each Hangul syllable is 3 UTF-8 bytes.
 
@@ -158,14 +153,7 @@ For STRR, English ranges from 0.55 (GPT-2) to 0.77 (Gemma-2), meaning that even 
 
 \subsection{Characters Per Token}
 
-Figure~\ref{fig:cpt} shows CPT across languages. For English, CPT ranges from 4.3 (Llama-2) to 7.0 (Gemma-2). For Chinese, CPT is below 1.0 for most tokenizers, meaning each character produces more than one token on average. The exceptions are BLOOM (2.6), Qwen2.5 (2.8), and Gemma-2 (2.2), which have sufficient CJK vocabulary to compress multiple characters into single tokens. The difference between CPT and compression ratio (CR) is most visible for CJK and Thai: since Chinese characters use 3 UTF-8 bytes each, a CPT of 0.6 (GPT-2 on Chinese) corresponds to a CR of 1.5, revealing that the tokenizer does compress bytes even though it expands characters.
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{fig6_cpt_by_lang.pdf}
-    \caption{Characters per token across tokenizers and languages. Higher values indicate more compact tokenization. English consistently has the highest CPT; Chinese and Thai have the lowest for tokenizers without dedicated CJK vocabulary.}
-    \label{fig:cpt}
-\end{figure*}
+CPT varies widely across languages (Appendix~\ref{app:cpt}). For English, CPT ranges from 4.3 (Llama-2) to 7.0 (Gemma-2). For Chinese, CPT is below 1.0 for most tokenizers, meaning each character produces more than one token on average. The exceptions are BLOOM (2.6), Qwen2.5 (2.8), and Gemma-2 (2.2), which have sufficient CJK vocabulary to compress multiple characters into single tokens. The difference between CPT and compression ratio (CR) is most visible for CJK and Thai: since Chinese characters use 3 UTF-8 bytes each, a CPT of 0.6 (GPT-2 on Chinese) corresponds to a CR of 1.5, revealing that the tokenizer does compress bytes even though it expands characters.
 
 \subsection{Correlation with Downstream Performance}
 
@@ -209,14 +197,7 @@ Figure~\ref{fig:scatter} illustrates this confound directly: while there is a vi
     \label{fig:scatter}
 \end{figure}
 
-Figure~\ref{fig:partial} shows the partial correlation heatmap after removing the model size confound. All values fall within $|r| < 0.3$, with no clear pattern, providing strong evidence that tokenizer metrics carry little predictive power beyond model scale for English benchmarks.
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{fig1b_partial_heatmap.pdf}
-    \caption{Partial Spearman correlation controlling for model size. After removing the model size confound, all correlations are weak ($|r| < 0.3$), confirming that tokenizer metrics do not predict English benchmark performance.}
-    \label{fig:partial}
-\end{figure*}
+After removing the model size confound, all partial correlations fall within $|r| < 0.3$ with no clear pattern, confirming that tokenizer metrics carry little predictive power beyond model scale for English benchmarks.
 
 \subsection{Vocabulary Size and Performance}
 
@@ -233,13 +214,19 @@ The Qwen2.5 family provides a natural controlled experiment: all sizes share the
 
 \subsection{Multilingual Downstream Correlation}
 
+% Declare figure* early so it floats to the correct page
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{fig10_slope_vs_metric.pdf}
+    \caption{Per-language scaling slope (score gain per decade of model size) vs.\ TokLens metrics for Qwen2.5. STRR shows the strongest correlation ($\rho = +0.91$, $p < 0.001$): languages with higher single-token retention benefit more from scaling. Hindi (STRR = 0.04) gains 25.8 points per decade vs.\ 34.9 for English (STRR = 0.64).}
+    \label{fig:slope_metric}
+\end{figure*}
+
 To test whether tokenizer quality predicts \emph{multilingual} downstream performance, we correlate per-language TokLens metrics with per-language scores from MMLU-ProX \citep{li2025mmluprox}, a multilingual extension of MMLU-Pro with 5-shot chain-of-thought prompting. We identify 7 overlapping models across 11 shared languages, yielding 77 (model, language) data points. For each pair, we compute TokLens metrics in that language and pair them with the corresponding MMLU-ProX score.
 
-Figure~\ref{fig:multilingual} shows the Spearman correlations. In contrast to the English-only null result, several metrics significantly correlate with multilingual performance. Partial correlations controlling for model size are \emph{stronger} than raw: STRR partial $\rho = +0.48$ ($p < 0.001$), CPT $+0.44$ ($p < 0.001$), fertility $-0.36$ ($p = 0.001$). Three survive Bonferroni correction ($\alpha = 0.0083$).
+Figure~\ref{fig:multilingual} shows the results. Unlike the English-only null result, several metrics significantly correlate with multilingual performance, and partial correlations controlling for model size are \emph{stronger}: STRR partial $\rho = +0.48$, CPT $+0.44$, fertility $-0.36$ (all $p \leq 0.001$, surviving Bonferroni correction).
 
-\paragraph{Mixed-effects models.} Since observations from the same model are correlated, we also fit linear mixed-effects models (LME): score $\sim$ z(metric) + log(params) + (1$|$model). LME results confirm the Spearman findings: STRR ($\beta = +5.68$, $z = 18.5$, $p < 0.001$), CPT ($\beta = +5.03$, $z = 11.0$, $p < 0.001$), and parity ($\beta = -4.29$, $z = -7.4$, $p < 0.001$). The model random intercept variance is large (100--115), confirming that model identity is the dominant source of variation, but tokenizer metrics provide significant additional explanatory power. Full LME results are in Appendix~\ref{app:lme}.
-
-\paragraph{Controlled experiment: Qwen2.5 scaling.} The Qwen2.5 family (0.5B--14B) shares the exact same 152K tokenizer, providing a natural controlled experiment where only model size varies. We regress per-language MMLU-ProX scores on log(params) and correlate scaling slopes with TokLens metrics. STRR shows a striking correlation with scaling slope ($\rho = +0.91$, $p < 0.001$; Appendix~\ref{app:qwen}): English (STRR = 0.64) gains 34.9 MMLU-ProX points per decade of scale, while Hindi (STRR = 0.04, a 16x gap) gains only 25.8, nearly 10 points less. Same tokenizer, same architecture, same training pipeline, yet tokenizer quality sets a ceiling on how much each language benefits from scaling.
+\paragraph{Mixed-effects models.} The pooled Spearman analysis treats each (model, language) pair as independent, but the 77 observations come from only 7 models, creating non-independence: observations from the same model share training data, architecture, and optimizer choices. To account for this clustered structure, we fit linear mixed-effects models (LME): score $\sim$ z(metric) + log(params) + (1$|$model), where the random intercept absorbs model-specific variance. LME results confirm the Spearman findings with proper uncertainty estimates: STRR ($\beta = +5.68$, $z = 18.5$, $p < 0.001$), CPT ($\beta = +5.03$, $z = 11.0$, $p < 0.001$), and parity ($\beta = -4.29$, $z = -7.4$, $p < 0.001$). The model random intercept variance is large (100--115), confirming that model identity is the dominant source of variation, but tokenizer metrics provide significant additional explanatory power. Full results are in Appendix~\ref{app:lme}.
 
 \begin{figure}[t]
     \centering
@@ -248,17 +235,22 @@ Figure~\ref{fig:multilingual} shows the Spearman correlations. In contrast to th
     \label{fig:multilingual}
 \end{figure}
 
+\paragraph{Controlled experiment: Qwen2.5 scaling.} The cross-model analyses above cannot fully disentangle tokenizer quality from training data composition. The Qwen2.5 family (0.5B--14B) partially addresses this: all five sizes share the same 152K tokenizer, training pipeline, and data mixture, so per-language performance differences can be more directly attributed to tokenizer quality. We regress per-language MMLU-ProX scores on log(params) and correlate scaling slopes with TokLens metrics. Figure~\ref{fig:qwen_scaling} shows that languages with better tokenizer quality consistently score higher and scale more steeply. Figure~\ref{fig:slope_metric} quantifies this: STRR shows a striking correlation with scaling slope ($\rho = +0.91$, $p < 0.001$). English (STRR = 0.64) gains 34.9 points per decade of scale, while Hindi (STRR = 0.04) gains only 25.8. Same tokenizer, same architecture, yet tokenizer quality sets a ceiling on how much each language benefits from scaling.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{fig9_qwen_scaling.pdf}
+    \caption{Qwen2.5 MMLU-ProX scaling curves. Each line is a language; all models share the same tokenizer. Languages with better tokenizer quality (en, fr, es) consistently score higher and show steeper scaling.}
+    \label{fig:qwen_scaling}
+\end{figure}
+
 \section{Discussion}
 
-\paragraph{Cross-lingual equity has improved but gaps remain.} From GPT-2 to Gemma-2, worst-case parity dropped from 14.9x to under 3x \citep{ahia-etal-2023-languages}. Vocabulary composition matters more than size: Qwen2.5 (152K) achieves better Chinese parity than BLOOM (251K) or Gemma-2 (256K).
-
-\paragraph{Tokenizer quality predicts multilingual but not English performance.} No metric correlates with English benchmarks after controlling for model size, aligning with \citet{ali2024tokenizer}. However, Spearman correlations ($\rho$ up to 0.48), LME models ($z$ up to 18.5), and the Qwen2.5 controlled experiment ($\rho = 0.91$) all confirm that tokenizer metrics predict per-language MMLU-ProX scores. English is well-served by all tokenizers, leaving little room for tokenizer quality to matter. For non-English languages, where quality varies dramatically, the impact becomes measurable.
-
-\paragraph{Practical implications.} A fertility of 91 (GPT-2 on Japanese) means a 4K context window provides only 71 effective words. TokLens enables auditing such disparities for any HuggingFace tokenizer without GPU (Appendix~\ref{app:toolkit}). We recommend vocabularies of at least 100K for cross-lingual parity below 3x, explicitly multilingual training corpora, and routine TokLens-style evaluation.
+STRR emerges as the strongest predictor (LME $z = 18.5$; Qwen2.5 $\rho = 0.91$), likely because single-token words preserve semantic unity while fragmentation forces reconstruction across positions. Fertility is marginal in the LME ($p = 0.065$) because its cross-script variance is absorbed by the random intercept. Practically, our results suggest that tokenizer developers targeting multilingual performance should prioritize STRR over raw compression: a vocabulary of $\geq$100K tokens with balanced allocation across target languages consistently achieves parity ratios below 3.0 and STRR above 0.3 for most scripts. Model developers can use TokLens to audit per-language tokenizer quality before training and identify languages likely to underperform at scale.
 
 \section{Conclusion}
 
-We introduced TokLens, an open-source multilingual tokenizer evaluation toolkit, and analyzed 24 tokenizers across 15 languages. No metric predicts English benchmarks, but STRR, CPT, and parity significantly predict multilingual performance (LME $p < 0.001$; Qwen2.5 controlled $\rho = 0.91$). We release TokLens for cross-lingual tokenizer auditing.
+We introduced TokLens, an open-source toolkit for multilingual tokenizer evaluation, and analyzed 24 tokenizers across 15 languages. No intrinsic metric predicts English benchmarks after controlling for model size. However, multilingual analysis using MMLU-ProX reveals that STRR, CPT, and parity significantly predict per-language performance via linear mixed-effects models ($p < 0.001$), and a controlled experiment with Qwen2.5 confirms that tokenizer quality modulates scaling benefits ($\rho = 0.91$).
 
 % ACL 2026 SRW: Limitations section required, does not count toward page limit
 \section*{Limitations}
@@ -285,13 +277,12 @@ This work evaluates tokenizer quality across languages, relevant to the fairness
 
 % ACL 2026 SRW: Appendices start after references, do not count toward page limit
 \appendix
+\onecolumn
 
 \section{Benchmark Scores}
 \label{app:benchmarks}
 
-Table~\ref{tab:benchmarks} reports the Open LLM Leaderboard v2 scores used in our correlation analysis. All scores are sourced from the official leaderboard.\footnote{\url{https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard}}
-
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{lrrrrrrrr}
@@ -322,16 +313,14 @@ Phi-4 & 14.7B & 5.9 & 52.4 & 31.6 & 20.8 & 23.8 & 47.6 & 30.4 \\
 Command-R-35B & 35.0B & 67.5 & 34.6 & 3.5 & 7.6 & 16.1 & 26.3 & 25.9 \\
 \bottomrule
 \end{tabular}
-\caption{Open LLM Leaderboard v2 benchmark scores for all 22 models with leaderboard entries, sorted by parameter count. MATH = MATH Lvl 5. Avg = unweighted average of all six benchmarks.}
+\caption{Open LLM Leaderboard v2 benchmark scores for all 22 models with leaderboard entries, sorted by parameter count. All scores are sourced from the official leaderboard. MATH = MATH Lvl 5. Avg = unweighted average of all six benchmarks.}
 \label{tab:benchmarks}
-\end{table*}
+\end{table}
 
 \section{English Tokenizer Metrics}
 \label{app:english}
 
-Table~\ref{tab:english_metrics} reports TokLens metrics computed on English Wikipedia text for all tokenizers with unique vocabularies (Qwen2.5 sizes share a single tokenizer and are listed once).
-
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{lrrrrrrr}
@@ -359,16 +348,14 @@ DeepSeek-V3 & 128,815 & 1.58 & 5.15 & 5.16 & 0.62 & 0.194 \\
 Qwen3-8B & 151,669 & 1.57 & 5.09 & 5.10 & 0.64 & 0.196 \\
 \bottomrule
 \end{tabular}
-\caption{TokLens metrics on English Wikipedia for all unique tokenizers. Fertility = tokens per word (lower is better). CPT = characters per token (higher is better). CR = compression ratio in bytes per token (higher is better). STRR = single-token retention rate (higher is better). NSL = normalized sequence length (lower is better).}
+\caption{TokLens metrics on English Wikipedia for all unique tokenizers. Qwen2.5 sizes share a single tokenizer and are listed once. Fertility = tokens per word (lower is better). CPT = characters per token (higher is better). CR = compression ratio in bytes per token (higher is better). STRR = single-token retention rate (higher is better). NSL = normalized sequence length (lower is better).}
 \label{tab:english_metrics}
-\end{table*}
+\end{table}
 
 \section{Cross-lingual Parity}
 \label{app:parity}
 
-Table~\ref{tab:parity} reports parity ratios for selected tokenizers across non-Latin languages (parity = token count relative to English). Values closer to 1.0 indicate better cross-lingual equity.
-
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{lrrrrrrr}
@@ -394,26 +381,61 @@ DeepSeek-V3 & 2.1 & 4.1 & 2.2 & 2.4 & 2.8 & 1.4 & 4.8 \\
 \end{tabular}
 \caption{Cross-lingual parity ratios for non-Latin languages (token count / English token count). Models with shared tokenizers (Phi-3 = Llama-2, Phi-4/OLMo-2/StableLM-2 share similar 100K vocabs, Qwen2.5 family identical) are listed once. Values above 3.0 indicate substantial disadvantage for non-English users.}
 \label{tab:parity}
-\end{table*}
+\end{table}
+
+\section{LME Results}
+\label{app:lme}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Metric} & $\boldsymbol{\beta}$ & \textbf{SE} & $\boldsymbol{z}$ & $\boldsymbol{p}$ \\
+\midrule
+STRR & $+$5.68 & 0.31 & 18.5 & $<$0.001 \\
+CPT & $+$5.03 & 0.46 & 11.0 & $<$0.001 \\
+NSL & $-$4.96 & 0.52 & $-$9.5 & $<$0.001 \\
+Parity & $-$4.29 & 0.58 & $-$7.4 & $<$0.001 \\
+CR & $+$2.12 & 0.88 & 2.4 & 0.015 \\
+Fertility & $-$1.34 & 0.73 & $-$1.8 & 0.065 \\
+\bottomrule
+\end{tabular}
+\caption{Linear mixed-effects model results. Each model: score $\sim$ z(metric) + log(params) + (1$|$model), fitted with REML on 77 observations (7 models, 11 languages). $\beta$: fixed effect of z-scored metric. Model random intercept variance ranges from 100 to 115. All metrics except fertility reach significance ($p < 0.05$), with STRR, CPT, NSL, and parity surviving Bonferroni correction.}
+\label{tab:lme}
+\end{table}
+
+\section{Fertility Heatmap}
+\label{app:fertility}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig4_fertility_by_lang.pdf}
+\caption{Fertility (tokens per word) across 24 tokenizers and 15 languages. CJK languages and Thai show the largest variation. Newer tokenizers with larger vocabularies dramatically reduce fertility for non-Latin scripts.}
+\label{fig:fertility}
+\end{figure}
 
 \section{STRR Heatmap}
 \label{app:strr}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig5_strr_by_lang.pdf}
+\caption{Single-Token Retention Rate (STRR) across tokenizers and languages. Higher values indicate more words are kept as single tokens. English and Romance languages have high STRR; Arabic, Hindi, and Thai have extremely low STRR across all tokenizers, reflecting both morphological complexity and vocabulary allocation bias.}
+\label{fig:strr}
+\end{figure}
 
-Figure~\ref{fig:strr} shows the single-token retention rate across all tokenizers and languages. STRR reveals vocabulary coverage: what proportion of words in each language exist as complete entries in the tokenizer's vocabulary.
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{fig5_strr_by_lang.pdf}
-    \caption{Single-Token Retention Rate (STRR) across tokenizers and languages. Higher values indicate more words are kept as single tokens. English and Romance languages have high STRR; Arabic, Hindi, and Thai have extremely low STRR across all tokenizers, reflecting both morphological complexity and vocabulary allocation bias.}
-    \label{fig:strr}
-\end{figure*}
+\section{CPT Heatmap}
+\label{app:cpt}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{fig6_cpt_by_lang.pdf}
+\caption{Characters per token across tokenizers and languages. Higher values indicate more compact tokenization. English consistently has the highest CPT; Chinese and Thai have the lowest for tokenizers without dedicated CJK vocabulary.}
+\label{fig:cpt}
+\end{figure}
 
 \section{Full Correlation Results}
 \label{app:correlations}
 
-Table~\ref{tab:full_corr} reports all Spearman and partial correlations between TokLens metrics and Open LLM Leaderboard v2 benchmarks, sorted by absolute Spearman $\rho$. Only English-only and cross-lingual average metrics are shown (77 total comparisons). Bonferroni-corrected significance threshold: $\alpha = 0.00065$. No correlation reaches this threshold.
-
-\begin{table*}[t]
+\begin{table}[H]
 \centering
 \small
 \begin{tabular}{llrrrr}
@@ -439,9 +461,9 @@ STRR (en) & MMLU-PRO & 0.156 & 0.4871 & 0.164 & 0.4770 \\
 STRR (en) & Average & 0.098 & 0.6657 & 0.083 & 0.7194 \\
 \bottomrule
 \end{tabular}
-\caption{Selected Spearman correlations between TokLens metrics and benchmarks ($n=22$, 77 total comparisons). ``avg'' = average across 15 languages; ``en'' = English only. Bonferroni threshold $\alpha = 0.00065$. No correlation is statistically significant. Full results are available in the supplementary material.}
+\caption{Selected Spearman correlations between TokLens metrics and benchmarks ($n=22$, 77 total comparisons). ``avg'' = average across 15 languages; ``en'' = English only. Bonferroni threshold $\alpha = 0.00065$. No correlation is statistically significant.}
 \label{tab:full_corr}
-\end{table*}
+\end{table}
 
 \section{Toolkit Usage}
 \label{app:toolkit}
@@ -451,82 +473,22 @@ TokLens is a Python library installable via \texttt{pip install toklens}. It req
 \begin{verbatim}
 from toklens import Analyzer
 
-# Load a tokenizer from HuggingFace
 analyzer = Analyzer.from_pretrained(
     "meta-llama/Llama-3.1-8B"
 )
-
-# Evaluate on built-in multilingual corpora
 report = analyzer.evaluate(
     langs=["en", "zh", "ja", "ar"]
 )
-
-# Print results table
 report.print_table()
-
-# Evaluate on custom text
-metrics = analyzer.evaluate_text(
-    text="Your custom text here.",
-    ref_text="Reference English text."
-)
 \end{verbatim}
 
-The toolkit computes all six metrics (fertility, CPT, compression ratio, STRR, NSL, parity) in a single pass. For the parity metric, a reference language (default: English) is required. Corpora are loaded from Wikipedia via HuggingFace \texttt{datasets} and cached locally after first download.
-
-The command-line interface supports quick evaluation:
+The toolkit computes all six metrics (fertility, CPT, compression ratio, STRR, NSL, parity) in a single pass. For the parity metric, a reference language (default: English) is required. Corpora are loaded from Wikipedia via HuggingFace \texttt{datasets} and cached locally after first download. The command-line interface supports quick evaluation:
 
 \begin{verbatim}
-# Evaluate a single tokenizer
 toklens eval meta-llama/Llama-3.1-8B \
     --langs en zh ja ar
-
-# Compare two tokenizers
-toklens compare \
-    meta-llama/Llama-2-7b-hf \
+toklens compare meta-llama/Llama-2-7b-hf \
     meta-llama/Llama-3.1-8B
 \end{verbatim}
-
-\section{LME Results}
-\label{app:lme}
-
-Table~\ref{tab:lme} reports the linear mixed-effects model results for all six TokLens metrics. Each model has the form: $\text{score} \sim z(\text{metric}) + \log(\text{params}) + (1 \mid \text{model})$, fitted with REML on 77 observations (7 models, 11 languages). The metric is z-scored so that $\beta$ represents the change in MMLU-ProX score per standard deviation of the metric.
-
-\begin{table}[t]
-\centering
-\small
-\begin{tabular}{lrrrr}
-\toprule
-\textbf{Metric} & $\boldsymbol{\beta}$ & \textbf{SE} & $\boldsymbol{z}$ & $\boldsymbol{p}$ \\
-\midrule
-STRR & $+$5.68 & 0.31 & 18.5 & $<$0.001 \\
-CPT & $+$5.03 & 0.46 & 11.0 & $<$0.001 \\
-NSL & $-$4.96 & 0.52 & $-$9.5 & $<$0.001 \\
-Parity & $-$4.29 & 0.58 & $-$7.4 & $<$0.001 \\
-CR & $+$2.12 & 0.88 & 2.4 & 0.015 \\
-Fertility & $-$1.34 & 0.73 & $-$1.8 & 0.065 \\
-\bottomrule
-\end{tabular}
-\caption{Linear mixed-effects model results. $\beta$: fixed effect of z-scored metric. Model random intercept variance ranges from 100 to 115, confirming that model identity explains most variance. Log(params) is significant ($p < 0.04$) in all models. All metrics except fertility reach significance ($p < 0.05$), with STRR, CPT, NSL, and parity surviving Bonferroni correction.}
-\label{tab:lme}
-\end{table}
-
-\section{Qwen2.5 Scaling Analysis}
-\label{app:qwen}
-
-The Qwen2.5 family (0.5B, 1.5B, 3B, 7B, 14B) shares a single 152K tokenizer, making TokLens metrics identical across sizes. Figure~\ref{fig:qwen_scaling} shows MMLU-ProX scaling curves by language; Figure~\ref{fig:slope_metric} correlates scaling slopes with tokenizer metrics.
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=\columnwidth]{fig9_qwen_scaling.pdf}
-    \caption{Qwen2.5 MMLU-ProX scaling curves. Each line is a language; all models share the same tokenizer. Languages with better tokenizer quality (en, fr, es) consistently score higher and show steeper scaling.}
-    \label{fig:qwen_scaling}
-\end{figure}
-
-\begin{figure*}[t]
-    \centering
-    \includegraphics[width=\textwidth]{fig10_slope_vs_metric.pdf}
-    \caption{Per-language scaling slope (score gain per decade of model size) vs.\ TokLens metrics for Qwen2.5. STRR shows the strongest correlation ($\rho = +0.91$, $p < 0.001$): languages with higher single-token retention benefit more from scaling. Hindi (STRR = 0.04) gains 25.8 points per decade vs.\ 34.9 for English (STRR = 0.64).}
-    \label{fig:slope_metric}
-\end{figure*}
 
 \end{document}
