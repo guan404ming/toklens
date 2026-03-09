@@ -1,0 +1,133 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Ahia et~al.(2023)Ahia, Kreutzer, and
+  Hooker}]{ahia-etal-2023-languages}
+Orevaoghene Ahia, Julia Kreutzer, and Sara Hooker. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.emnlp-main.614} {Do all
+  languages cost the same? tokenization in the era of commercial language
+  models}.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing}, pages 9524--9541. Association for Computational
+  Linguistics.
+
+\bibitem[{Ali et~al.(2024)Ali, Fromm, Thellmann, Perea, Nagel, Imani, Kerkmann,
+  Venkatraman, Vreeken, Hees, and Schmeier}]{ali2024tokenizer}
+Mehdi Ali, Michael Fromm, Klaudia Thellmann, Richard Perea, Maximilian Nagel,
+  Hassan Imani, Niclas Kerkmann, Nishant Venkatraman, Jilles Vreeken, J{\"o}rn
+  Hees, and Sven Schmeier. 2024.
+\newblock Tokenizer choice for {LLM} training: Negligible or crucial?
+\newblock \emph{arXiv preprint arXiv:2310.08754}.
+
+\bibitem[{{BigScience Workshop}(2023)}]{workshop2023bloom}
+{BigScience Workshop}. 2023.
+\newblock {BLOOM}: A 176b-parameter open-access multilingual language model.
+\newblock \emph{arXiv preprint arXiv:2211.05100}.
+
+\bibitem[{Clark et~al.(2022)Clark, Garrette, Turc, and
+  Wieting}]{clark-etal-2022-canine}
+Jonathan~H. Clark, Dan Garrette, Iulia Turc, and John Wieting. 2022.
+\newblock \href {https://doi.org/10.1162/tacl_a_00448} {{CANINE}: Pre-training
+  an efficient tokenization-free encoder for language representation}.
+\newblock In \emph{Transactions of the Association for Computational
+  Linguistics}, volume~10, pages 73--91.
+
+\bibitem[{Dubey et~al.(2024)Dubey, Jauhri, Pandey, Kadian, Al-Dahle, Letman,
+  Mathur, Schelten, Yang, Fan et~al.}]{dubey2024llama3}
+Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian, Ahmad
+  Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Amy Yang, Angela Fan,
+  and 1 others. 2024.
+\newblock The llama 3 herd of models.
+\newblock \emph{arXiv preprint arXiv:2407.21783}.
+
+\bibitem[{Fourrier et~al.(2024)Fourrier, Habib, Lhoest, and
+  Wolf}]{fourrier2024open}
+Cl{\'e}mentine Fourrier, Nathan Habib, Quentin Lhoest, and Thomas Wolf. 2024.
+\newblock \href
+  {https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard}
+  {Open {LLM} leaderboard v2}.
+\newblock \emph{Hugging Face Blog}.
+
+\bibitem[{Jiang et~al.(2023)Jiang, Sablayrolles, Mensch, Bamford, Chaplot,
+  de~las Casas, Bressand, Lengyel, Lample, Saulnier et~al.}]{jiang2023mistral}
+Albert~Q Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford,
+  Devendra~Singh Chaplot, Diego de~las Casas, Florian Bressand, Gianna Lengyel,
+  Guillaume Lample, Lucile Saulnier, and 1 others. 2023.
+\newblock Mistral 7b.
+\newblock \emph{arXiv preprint arXiv:2310.06825}.
+
+\bibitem[{Kudo and Richardson(2018)}]{kudo-richardson-2018-sentencepiece}
+Taku Kudo and John Richardson. 2018.
+\newblock \href {https://doi.org/10.18653/v1/D18-2012} {{S}entence{P}iece: A
+  simple and language independent subword tokenizer and detokenizer for neural
+  text processing}.
+\newblock In \emph{Proceedings of the 2018 Conference on Empirical Methods in
+  Natural Language Processing: System Demonstrations}, pages 66--71.
+  Association for Computational Linguistics.
+
+\bibitem[{Li et~al.(2025)Li, Zhang, and Yu}]{li2025mmluprox}
+Weihao Li, Zhe Zhang, and Haoyang Yu. 2025.
+\newblock {MMLU-ProX}: A multilingual extension of {MMLU-Pro}.
+\newblock \emph{arXiv preprint arXiv:2503.10497}.
+
+\bibitem[{Liang et~al.(2023)Liang, Gonen, Mao, Hou, Goyal, Ghazvininejad,
+  Zettlemoyer, and Khabsa}]{liang-etal-2023-xlm}
+Davis Liang, Hila Gonen, Yuning Mao, Rui Hou, Naman Goyal, Marjan
+  Ghazvininejad, Luke Zettlemoyer, and Madian Khabsa. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.emnlp-main.813} {{XLM}-v:
+  Overcoming the vocabulary bottleneck in multilingual masked language models}.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
+  Natural Language Processing}, pages 13142--13152. Association for
+  Computational Linguistics.
+
+\bibitem[{Petrov et~al.(2024)Petrov, La~Malfa, Torr, and
+  Biber}]{petrov-etal-2024-language}
+Aleksandar Petrov, Emanuele La~Malfa, Philip Torr, and Adel Biber. 2024.
+\newblock Language model tokenizers introduce unfairness between languages.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36.
+
+\bibitem[{Radford et~al.(2019)Radford, Wu, Child, Luan, Amodei, and
+  Sutskever}]{radford2019language}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever. 2019.
+\newblock Language models are unsupervised multitask learners.
+\newblock \emph{OpenAI Blog}.
+
+\bibitem[{Rust et~al.(2021)Rust, Pfeiffer, Vulic, Ruder, and
+  Gurevych}]{rust-etal-2021-good}
+Phillip Rust, Jonas Pfeiffer, Ivan Vulic, Sebastian Ruder, and Iryna Gurevych.
+  2021.
+\newblock \href {https://doi.org/10.18653/v1/2021.acl-long.243} {How good is
+  your tokenizer? on the monolingual performance of multilingual language
+  models}.
+\newblock In \emph{Proceedings of the 59th Annual Meeting of the Association
+  for Computational Linguistics and the 11th International Joint Conference on
+  Natural Language Processing (Volume 1: Long Papers)}, pages 3118--3135.
+  Association for Computational Linguistics.
+
+\bibitem[{Sennrich et~al.(2016)Sennrich, Haddow, and
+  Birch}]{sennrich-etal-2016-neural}
+Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016.
+\newblock \href {https://doi.org/10.18653/v1/P16-1162} {Neural machine
+  translation of rare words with subword units}.
+\newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
+  for Computational Linguistics (Volume 1: Long Papers)}, pages 1715--1725.
+  Association for Computational Linguistics.
+
+\bibitem[{Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi,
+  Babaei, Bashlykov, Batra, Bhargava, Bhosale et~al.}]{touvron2023llama}
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine
+  Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale,
+  and 1 others. 2023.
+\newblock Llama 2: Open foundation and fine-tuned chat models.
+\newblock \emph{arXiv preprint arXiv:2307.09288}.
+
+\bibitem[{Yang et~al.(2024)Yang, Yang, Zhang, Hui, Zheng, Yu, Li, Liu, Huang,
+  Wei et~al.}]{yang2024qwen2}
+An~Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo~Zheng, Bowen Yu,
+  Chengyuan Li, Dayiheng Liu, Fei Huang, Haoran Wei, and 1 others. 2024.
+\newblock Qwen2.5 technical report.
+\newblock \emph{arXiv preprint arXiv:2412.15115}.
+
+\end{thebibliography}

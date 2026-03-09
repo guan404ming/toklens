@@ -1,0 +1,762 @@
+{
+  "models": [
+    "Qwen/Qwen2.5-3B",
+    "Qwen/Qwen2.5-7B",
+    "Qwen/Qwen2.5-14B",
+    "meta-llama/Llama-3.1-8B",
+    "microsoft/phi-4",
+    "google/gemma-2-9b",
+    "mistralai/Mistral-7B-v0.3"
+  ],
+  "n_models": 7,
+  "languages": [
+    "en",
+    "zh",
+    "ja",
+    "ko",
+    "fr",
+    "de",
+    "es",
+    "pt",
+    "ar",
+    "th",
+    "hi"
+  ],
+  "n_languages": 11,
+  "source": "MMLU-ProX (Li et al., 2025), 5-shot CoT",
+  "pooled": [
+    {
+      "analysis": "pooled",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3514,
+      "spearman_p": 0.001726,
+      "partial_r": 0.4349,
+      "partial_p": 8.6e-05,
+      "n": 77,
+      "n_models": 7,
+      "n_langs": 11
+    },
+    {
+      "analysis": "pooled",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.3514,
+      "spearman_p": 0.001726,
+      "partial_r": -0.4349,
+      "partial_p": 8.6e-05,
+      "n": 77,
+      "n_models": 7,
+      "n_langs": 11
+    },
+    {
+      "analysis": "pooled",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3306,
+      "spearman_p": 0.003323,
+      "partial_r": 0.4762,
+      "partial_p": 1.4e-05,
+      "n": 77,
+      "n_models": 7,
+      "n_langs": 11
+    },
+    {
+      "analysis": "pooled",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2652,
+      "spearman_p": 0.019743,
+      "partial_r": -0.3612,
+      "partial_p": 0.001346,
+      "n": 77,
+      "n_models": 7,
+      "n_langs": 11
+    },
+    {
+      "analysis": "pooled",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2432,
+      "spearman_p": 0.033071,
+      "partial_r": -0.3486,
+      "partial_p": 0.00203,
+      "n": 77,
+      "n_models": 7,
+      "n_langs": 11
+    },
+    {
+      "analysis": "pooled",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1649,
+      "spearman_p": 0.151746,
+      "partial_r": 0.1291,
+      "partial_p": 0.2662,
+      "n": 77,
+      "n_models": 7,
+      "n_langs": 11
+    }
+  ],
+  "non_english": [
+    {
+      "analysis": "non_english",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2904,
+      "spearman_p": 0.014748,
+      "partial_r": 0.34,
+      "partial_p": 0.004257,
+      "n": 70,
+      "n_models": 7,
+      "n_langs": 10
+    },
+    {
+      "analysis": "non_english",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2904,
+      "spearman_p": 0.014748,
+      "partial_r": -0.34,
+      "partial_p": 0.004257,
+      "n": 70,
+      "n_models": 7,
+      "n_langs": 10
+    },
+    {
+      "analysis": "non_english",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2723,
+      "spearman_p": 0.022591,
+      "partial_r": 0.3991,
+      "partial_p": 0.000681,
+      "n": 70,
+      "n_models": 7,
+      "n_langs": 10
+    },
+    {
+      "analysis": "non_english",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1888,
+      "spearman_p": 0.117471,
+      "partial_r": -0.2498,
+      "partial_p": 0.038414,
+      "n": 70,
+      "n_models": 7,
+      "n_langs": 10
+    },
+    {
+      "analysis": "non_english",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1765,
+      "spearman_p": 0.143764,
+      "partial_r": -0.256,
+      "partial_p": 0.033732,
+      "n": 70,
+      "n_models": 7,
+      "n_langs": 10
+    },
+    {
+      "analysis": "non_english",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1044,
+      "spearman_p": 0.389869,
+      "partial_r": 0.0281,
+      "partial_p": 0.818852,
+      "n": 70,
+      "n_models": 7,
+      "n_langs": 10
+    }
+  ],
+  "per_language": [
+    {
+      "analysis": "per_language",
+      "lang": "en",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.5189,
+      "spearman_p": 0.232754,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "en",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "en",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "en",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.6301,
+      "spearman_p": 0.12936,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "en",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "zh",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1112,
+      "spearman_p": 0.812407,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "zh",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1112,
+      "spearman_p": 0.812407,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "zh",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1112,
+      "spearman_p": 0.812407,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "zh",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.0,
+      "spearman_p": 1.0,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "zh",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1112,
+      "spearman_p": 0.812407,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "zh",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1112,
+      "spearman_p": 0.812407,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ja",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ja",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ja",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ja",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ja",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ja",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ko",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ko",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ko",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ko",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1112,
+      "spearman_p": 0.812407,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ko",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ko",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "fr",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.4077,
+      "spearman_p": 0.363942,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "fr",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "fr",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "fr",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.4077,
+      "spearman_p": 0.363942,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "fr",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "fr",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.4077,
+      "spearman_p": 0.363942,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "de",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "de",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "de",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "de",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.4818,
+      "spearman_p": 0.273587,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "de",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "de",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "es",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.4447,
+      "spearman_p": 0.317372,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "es",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "es",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "es",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.4447,
+      "spearman_p": 0.317372,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "es",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "es",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.4447,
+      "spearman_p": 0.317372,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "pt",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.4447,
+      "spearman_p": 0.317372,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "pt",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "pt",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "pt",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.7042,
+      "spearman_p": 0.07735,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "pt",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2224,
+      "spearman_p": 0.631749,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "pt",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1853,
+      "spearman_p": 0.690778,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ar",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.2594,
+      "spearman_p": 0.574237,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ar",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ar",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ar",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ar",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "ar",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.0371,
+      "spearman_p": 0.937124,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "th",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "th",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "th",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "th",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "th",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "th",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.0741,
+      "spearman_p": 0.874507,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "hi",
+      "metric": "fertility",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "hi",
+      "metric": "cpt",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "hi",
+      "metric": "compression_ratio",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "hi",
+      "metric": "strr",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "hi",
+      "metric": "nsl",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": -0.1482,
+      "spearman_p": 0.75108,
+      "n": 7
+    },
+    {
+      "analysis": "per_language",
+      "lang": "hi",
+      "metric": "parity",
+      "benchmark": "MMLU-ProX",
+      "spearman_r": 0.4077,
+      "spearman_p": 0.363942,
+      "n": 7
+    }
+  ]
+}

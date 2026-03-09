@@ -1,0 +1,58 @@
+{
+  "method": "Qwen2.5 fixed-tokenizer scaling analysis",
+  "description": "All Qwen2.5 models share the same 152K tokenizer. We regress MMLU-ProX score on log10(params) per language, then correlate the scaling slope with tokenizer metrics.",
+  "tokenizer": "Qwen/Qwen2.5-1.5B",
+  "sizes_b": [
+    0.5,
+    1.5,
+    3,
+    7,
+    14
+  ],
+  "slopes": {
+    "en": {
+      "slope": 34.873012327109215,
+      "r2": 0.9917741979275994
+    },
+    "zh": {
+      "slope": 32.1233524336077,
+      "r2": 0.9977861507719448
+    },
+    "ja": {
+      "slope": 31.78808166699787,
+      "r2": 0.998509699649582
+    },
+    "ko": {
+      "slope": 31.656717941574158,
+      "r2": 0.9916227353972573
+    },
+    "fr": {
+      "slope": 33.39162617472719,
+      "r2": 0.9990257177409462
+    },
+    "de": {
+      "slope": 33.15834498829981,
+      "r2": 0.9962423455412568
+    },
+    "es": {
+      "slope": 33.33596488124423,
+      "r2": 0.9985216125675281
+    },
+    "pt": {
+      "slope": 33.60525475214297,
+      "r2": 0.9979459998449819
+    },
+    "ar": {
+      "slope": 30.691879048756736,
+      "r2": 0.992083871491738
+    },
+    "th": {
+      "slope": 30.244928987517504,
+      "r2": 0.9862838594038906
+    },
+    "hi": {
+      "slope": 25.757119948233367,
+      "r2": 0.9434384667222314
+    }
+  }
+}
