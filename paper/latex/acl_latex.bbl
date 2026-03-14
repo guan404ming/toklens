@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahia et~al.(2023)Ahia, Kreutzer, and
@@ -23,6 +23,13 @@ Mehdi Ali, Michael Fromm, Klaudia Thellmann, Richard Perea, Maximilian Nagel,
 {BigScience Workshop}. 2023.
 \newblock {BLOOM}: A 176b-parameter open-access multilingual language model.
 \newblock \emph{arXiv preprint arXiv:2211.05100}.
+
+\bibitem[{Chelombitko et~al.(2024)Chelombitko, Safronov, and
+  Komissarov}]{chelombitko2024qtok}
+Iaroslav Chelombitko, Egor Safronov, and Aleksey Komissarov. 2024.
+\newblock Qtok: A comprehensive framework for evaluating multilingual tokenizer
+  quality in large language models.
+\newblock \emph{arXiv preprint arXiv:2410.12989}.
 
 \bibitem[{Clark et~al.(2022)Clark, Garrette, Turc, and
   Wieting}]{clark-etal-2022-canine}
@@ -79,6 +86,15 @@ Davis Liang, Hila Gonen, Yuning Mao, Rui Hou, Naman Goyal, Marjan
 \newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in
   Natural Language Processing}, pages 13142--13152. Association for
   Computational Linguistics.
+
+\bibitem[{Limisiewicz et~al.(2023)Limisiewicz, Balhar, and
+  Mare{\v{c}}ek}]{limisiewicz-etal-2023-tokenization}
+Tomasz Limisiewicz, Ji{\v{r}}{\'i} Balhar, and David Mare{\v{c}}ek. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.findings-acl.350}
+  {Tokenization impacts multilingual language modeling: Assessing vocabulary
+  allocation and overlap across languages}.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  ACL 2023}, pages 5661--5681. Association for Computational Linguistics.
 
 \bibitem[{Petrov et~al.(2024)Petrov, La~Malfa, Torr, and
   Biber}]{petrov-etal-2024-language}

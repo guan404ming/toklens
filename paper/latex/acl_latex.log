@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  9 MAR 2026 23:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  10 MAR 2026 00:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,6 +564,7 @@ and I'll forget about whatever was undefined.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 84.
 
+
 ! Undefined control sequence.
 l.125 ... 77 metric-benchmark pairs ($\alpha_\text
                                                   {corrected} = 0.00065$).
@@ -573,26 +574,30 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-
-<fig3_parity.pdf, id=198, 805.33336pt x 688.60988pt>
+<fig3_parity.pdf, id=208, 805.33336pt x 688.60988pt>
 File: fig3_parity.pdf Graphic file (type pdf)
 <use fig3_parity.pdf>
 Package pdftex.def Info: fig3_parity.pdf  used on input line 135.
 (pdftex.def)             Requested size: 455.24411pt x 389.26494pt.
 
-Underfull \hbox (badness 1675) in paragraph at lines 146--147
-\T1/ptm/m/n/10.95 (+20) pendix [][]D[][]). En-glish fer-til-ity ranges from 1.2
+Underfull \hbox (badness 1931) in paragraph at lines 146--147
+\T1/ptm/m/n/10.95 (+20) pendix [][]E[][]). En-glish fer-til-ity ranges from 1.2
 
  []
 
 
 
 [3]
+Underfull \vbox (badness 4531) has occurred while \output is active []
+
+
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+[4 <./fig3_parity.pdf>]
 ! Undefined control sequence.
 l.160 ...fter Bonferroni correction ($\alpha_\text
                                                   {corrected} = 0.00065$, 77...
@@ -602,18 +607,11 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[4 <./fig3_parity.pdf>]
-<fig1_heatmap.pdf, id=284, 553.274pt x 283.7306pt>
+<fig1_heatmap.pdf, id=296, 553.274pt x 283.7306pt>
 File: fig1_heatmap.pdf Graphic file (type pdf)
 <use fig1_heatmap.pdf>
 Package pdftex.def Info: fig1_heatmap.pdf  used on input line 164.
 (pdftex.def)             Requested size: 455.24411pt x 233.46585pt.
-
 ! Undefined control sequence.
 <recently read> \boldsymbol 
                             
@@ -694,48 +692,58 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<fig2_scatter.pdf, id=287, 543.10974pt x 428.13763pt>
+
+
+<fig2_scatter.pdf, id=299, 543.10974pt x 428.13763pt>
 File: fig2_scatter.pdf Graphic file (type pdf)
 <use fig2_scatter.pdf>
 Package pdftex.def Info: fig2_scatter.pdf  used on input line 195.
 (pdftex.def)             Requested size: 219.08614pt x 172.70883pt.
-
-
-<fig7_vocab_vs_benchmark.pdf, id=289, 543.07562pt x 427.70578pt>
+<fig7_vocab_vs_benchmark.pdf, id=302, 543.07562pt x 427.70578pt>
 File: fig7_vocab_vs_benchmark.pdf Graphic file (type pdf)
 <use fig7_vocab_vs_benchmark.pdf>
 Package pdftex.def Info: fig7_vocab_vs_benchmark.pdf  used on input line 208.
 (pdftex.def)             Requested size: 219.08614pt x 172.54115pt.
-<fig10_slope_vs_metric.pdf, id=290, 509.08427pt x 208.96332pt>
+<fig10_slope_vs_metric.pdf, id=303, 509.08427pt x 208.96332pt>
 File: fig10_slope_vs_metric.pdf Graphic file (type pdf)
 <use fig10_slope_vs_metric.pdf>
 Package pdftex.def Info: fig10_slope_vs_metric.pdf  used on input line 220.
 (pdftex.def)             Requested size: 455.24411pt x 186.86952pt.
-<fig8_multilingual_corr.pdf, id=295, 393.05185pt x 244.81839pt>
+
+
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+
+
+[6 <./fig1_heatmap.pdf> <./fig2_scatter.pdf> <./fig7_vocab_vs_benchmark.pdf>]
+<fig8_multilingual_corr.pdf, id=526, 393.05185pt x 244.81839pt>
 File: fig8_multilingual_corr.pdf Graphic file (type pdf)
 <use fig8_multilingual_corr.pdf>
 Package pdftex.def Info: fig8_multilingual_corr.pdf  used on input line 233.
 (pdftex.def)             Requested size: 219.08614pt x 136.4623pt.
 
 
-[5]
-Underfull \vbox (badness 2469) has occurred while \output is active []
-
-
-
-<fig9_qwen_scaling.pdf, id=315, 353.50821pt x 245.29893pt>
+<fig9_qwen_scaling.pdf, id=529, 353.50821pt x 245.29893pt>
 File: fig9_qwen_scaling.pdf Graphic file (type pdf)
 <use fig9_qwen_scaling.pdf>
 Package pdftex.def Info: fig9_qwen_scaling.pdf  used on input line 242.
 (pdftex.def)             Requested size: 219.08614pt x 152.02386pt.
 
 
-[6 <./fig1_heatmap.pdf> <./fig2_scatter.pdf> <./fig7_vocab_vs_benchmark.pdf>]
+[7 <./fig10_slope_vs_metric.pdf> <./fig8_multilingual_corr.pdf>]
 
 
+Underfull \hbox (badness 1748) in paragraph at lines 264--265
+\T1/ptm/m/n/10.95 (+20) Japanese, PyThaiNLP for Thai) would yield
+ []
 
-[7 <./fig10_slope_vs_metric.pdf> <./fig8_multilingual_corr.pdf> <./fig9_qwen_sc
-aling.pdf>] (./acl_latex.bbl
+(./acl_latex.bbl
 Underfull \hbox (badness 1546) in paragraph at lines 16--21
 []\T1/ptm/m/n/10 (+20) Mehdi Ali, Michael Fromm, Klau-dia Thell-mann,
  []
@@ -747,20 +755,22 @@ Underfull \hbox (badness 1776) in paragraph at lines 16--21
 
 
 
+[8 <./fig9_qwen_scaling.pdf>]
+Underfull \hbox (badness 1248) in paragraph at lines 29--33
+\T1/ptm/m/n/10 (+20) ity in large lan-guage mod-els.  \T1/ptm/m/it/10 (+20) arX
+iv preprint
+ []
 
-Underfull \hbox (badness 1062) in paragraph at lines 69--72
+
+Underfull \hbox (badness 1062) in paragraph at lines 76--79
 \T1/ptm/m/n/10 (+20) ProX: A mul-ti-lin-gual ex-ten-sion of MMLU-Pro.
  []
 
 
 
-[8])
+)
 
-
-
-[9
-
-]
+[9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -801,7 +811,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<fig4_fertility_by_lang.pdf, id=778, 627.4452pt x 775.4136pt>
+<fig4_fertility_by_lang.pdf, id=797, 627.4452pt x 775.4136pt>
 File: fig4_fertility_by_lang.pdf Graphic file (type pdf)
 <use fig4_fertility_by_lang.pdf>
 Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 412.
@@ -812,7 +822,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [11]
-<fig5_strr_by_lang.pdf, id=787, 624.74762pt x 775.4136pt>
+<fig5_strr_by_lang.pdf, id=805, 624.74762pt x 775.4136pt>
 File: fig5_strr_by_lang.pdf Graphic file (type pdf)
 <use fig5_strr_by_lang.pdf>
 Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 421.
@@ -823,7 +833,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [12 <./fig4_fertility_by_lang.pdf>]
-<fig6_cpt_by_lang.pdf, id=858, 617.07835pt x 775.4136pt>
+<fig6_cpt_by_lang.pdf, id=876, 617.07835pt x 775.4136pt>
 File: fig6_cpt_by_lang.pdf Graphic file (type pdf)
 <use fig6_cpt_by_lang.pdf>
 Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 430.
@@ -839,14 +849,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [14 <./fig6_cpt_by_lang.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 47
+<fig11_partial_residuals.pdf, id=1012, 747.46826pt x 315.64299pt>
+File: fig11_partial_residuals.pdf Graphic file (type pdf)
+<use fig11_partial_residuals.pdf>
+Package pdftex.def Info: fig11_partial_residuals.pdf  used on input line 473.
+(pdftex.def)             Requested size: 455.24411pt x 192.24814pt.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 48
 1.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 471.
+(Font)              scaled to size 10.95pt on input line 481.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -854,32 +869,24 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 [15{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0
-.enc}] (./acl_latex.aux)
+.enc} <./fig11_partial_residuals.pdf>]
+
+[16] (./acl_latex.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `acl_latex.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `acl_latex.out':
-(rerunfilecheck)             Before: 11E7A94976304C89A16ED0D5BAE97E2A;3748
-(rerunfilecheck)             After:  F43ECED5B8B0414C353FBC179CBF303C;3748.
+Package rerunfilecheck Info: File `acl_latex.out' has not changed.
+(rerunfilecheck)             Checksum: A3769ED1883DF7BA168D0FB407710EE9;3881.
  ) 
 Here is how much of TeX's memory you used:
- 14897 strings out of 474662
- 240510 string characters out of 5751108
- 702716 words of memory out of 5000000
- 37329 multiletter control sequences out of 15000+600000
- 609356 words of font info for 288 fonts, out of 8000000 for 9000
+ 14925 strings out of 474662
+ 241183 string characters out of 5751108
+ 703266 words of memory out of 5000000
+ 37346 multiletter control sequences out of 15000+600000
+ 609711 words of font info for 292 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 84i,11n,93p,1586b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,93p,1704b,695s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/inconsolata/Incon
 solata-zi4r.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmex10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public
@@ -898,10 +905,10 @@ sic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025basi
 c/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025basic/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl_latex.pdf (15 pages, 700812 bytes).
+Output written on acl_latex.pdf (16 pages, 732217 bytes).
 PDF statistics:
- 1096 PDF objects out of 1200 (max. 8388607)
- 452 compressed objects within 5 object streams
- 93 named destinations out of 1000 (max. 500000)
- 45819 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1194 PDF objects out of 1200 (max. 8388607)
+ 485 compressed objects within 5 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 45832 words of extra memory for PDF output out of 51595 (max. 10000000)
 
