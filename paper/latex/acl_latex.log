@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  10 MAR 2026 00:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.12.31)  14 MAR 2026 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -261,7 +261,78 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip54
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 305.
-) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/times.sty
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen167
+))
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen168
+)
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count297
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count298
+\leftroot@=\count299
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count300
+\DOTSCASE@=\count301
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen169
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count302
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count303
+\dotsspace@=\muskip18
+\c@parentequation=\count304
+\dspbrk@lvl=\count305
+\tag@help=\toks21
+\row@=\count306
+\column@=\count307
+\maxfields@=\count308
+\andhelp@=\toks22
+\eqnshift@=\dimen170
+\alignsep@=\dimen171
+\tagshift@=\dimen172
+\tagwidth@=\dimen173
+\totwidth@=\dimen174
+\lineht@=\dimen175
+\@envbody=\toks23
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+\@LN@amsmath@ams@eqpen=\count309
+
+(/usr/local/texlive/2025basic/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/latexsym.sty
@@ -280,23 +351,23 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ))
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks20
-\inpenc@posthook=\toks21
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2025/02/11 v3.2a Micro-typographical refinements (RS)
-\MT@toks=\toks22
-\MT@tempbox=\box53
-\MT@count=\count297
+\MT@toks=\toks27
+\MT@tempbox=\box55
+\MT@count=\count310
 LaTeX Info: Redefining \noprotrusionifhmode on input line 1087.
 LaTeX Info: Redefining \leftprotrusion on input line 1088.
-\MT@prot@toks=\toks23
+\MT@prot@toks=\toks28
 LaTeX Info: Redefining \rightprotrusion on input line 1107.
 LaTeX Info: Redefining \textls on input line 1449.
-\MT@outer@kern=\dimen167
+\MT@outer@kern=\dimen176
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
-\MT@listname@count=\count298
+\MT@listname@count=\count311
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/microtype/microtype-pdftex.d
 ef
@@ -304,7 +375,7 @@ File: microtype-pdftex.def 2025/02/11 v3.2a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 944.
 LaTeX Info: Redefining \lslig on input line 944.
-\MT@outer@space=\skip55
+\MT@outer@space=\skip58
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (/usr/local/texlive/2025basic/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -324,13 +395,13 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2025basic/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks24
-\XKV@tempa@toks=\toks25
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
 )
-\XKV@depth=\count299
+\XKV@depth=\count312
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\zifour@ocount=\count300
+\zifour@ocount=\count313
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -346,76 +417,76 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
 )
-\Gin@req@height=\dimen168
-\Gin@req@width=\dimen169
+\Gin@req@height=\dimen177
+\Gin@req@width=\dimen178
 ) (/usr/local/texlive/2025basic/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen170
-\lightrulewidth=\dimen171
-\cmidrulewidth=\dimen172
-\belowrulesep=\dimen173
-\belowbottomsep=\dimen174
-\aboverulesep=\dimen175
-\abovetopsep=\dimen176
-\cmidrulesep=\dimen177
-\cmidrulekern=\dimen178
-\defaultaddspace=\dimen179
-\@cmidla=\count301
-\@cmidlb=\count302
-\@aboverulesep=\dimen180
-\@belowrulesep=\dimen181
-\@thisruleclass=\count303
-\@lastruleclass=\count304
-\@thisrulewidth=\dimen182
+\heavyrulewidth=\dimen179
+\lightrulewidth=\dimen180
+\cmidrulewidth=\dimen181
+\belowrulesep=\dimen182
+\belowbottomsep=\dimen183
+\aboverulesep=\dimen184
+\abovetopsep=\dimen185
+\cmidrulesep=\dimen186
+\cmidrulekern=\dimen187
+\defaultaddspace=\dimen188
+\@cmidla=\count314
+\@cmidlb=\count315
+\@aboverulesep=\dimen189
+\@belowrulesep=\dimen190
+\@thisruleclass=\count316
+\@lastruleclass=\count317
+\@thisrulewidth=\dimen191
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count305
-\float@exts=\toks26
-\float@box=\box54
-\@float@everytoks=\toks27
-\@floatcapt=\box55
+\c@float@type=\count318
+\float@exts=\toks31
+\float@box=\box56
+\@float@everytoks=\toks32
+\@floatcapt=\box57
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count306
-\l__pdf_internal_box=\box56
+\l__color_backend_stack_int=\count319
+\l__pdf_internal_box=\box58
 ) (./acl_latex.aux)
 \openout1 = `acl_latex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count307
-\scratchdimen=\dimen183
-\scratchbox=\box57
-\nofMPsegments=\count308
-\nofMParguments=\count309
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count310
-\MPscratchDim=\dimen184
-\MPnumerator=\count311
-\makeMPintoPDFobject=\count312
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count320
+\scratchdimen=\dimen192
+\scratchbox=\box59
+\nofMPsegments=\count321
+\nofMParguments=\count322
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count323
+\MPscratchDim=\dimen193
+\MPnumerator=\count324
+\makeMPintoPDFobject=\count325
+\everyMPtoPDFconversion=\toks34
 )
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.s
 ty
@@ -465,25 +536,25 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 22.
+Package hyperref Info: Link coloring ON on input line 23.
 (./acl_latex.out) (./acl_latex.out)
 \@outlinefile=\write3
 \openout3 = `acl_latex.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 22.
-Package microtype Info: Applying patch `item' on input line 22.
-Package microtype Info: Applying patch `toc' on input line 22.
-Package microtype Info: Applying patch `eqnum' on input line 22.
-Package microtype Info: Applying patch `footnote' on input line 22.
-Package microtype Info: Applying patch `verbatim' on input line 22.
-LaTeX Info: Redefining \microtypesetup on input line 22.
+LaTeX Info: Redefining \microtypecontext on input line 23.
+Package microtype Info: Applying patch `item' on input line 23.
+Package microtype Info: Applying patch `toc' on input line 23.
+Package microtype Info: Applying patch `eqnum' on input line 23.
+Package microtype Info: Applying patch `footnote' on input line 23.
+Package microtype Info: Applying patch `verbatim' on input line 23.
+LaTeX Info: Redefining \microtypesetup on input line 23.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 22.
+LaTeX Info: Redefining \showhyphens on input line 23.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -499,23 +570,12 @@ tim
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 23
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 24
 .
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 26.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 26.
-
 
 
 
@@ -525,62 +585,18 @@ usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 42.
-
-
-! Undefined control sequence.
-l.59     \text
-              {Fertility}(\ell) = \frac{1}{n}\sum_{i=1}^{n} |T(w_i)|
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \text 
-                      
-l.71 ...guage and English on parallel text: $\text
-                                                  {Parity}(\ell) = |t_\ell| ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.71 ...$\text{Parity}(\ell) = |t_\ell| / |t_\text
-                                                  {en}|$. A value of 1.0 mea...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 
 [2]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 84.
-
-
-! Undefined control sequence.
-l.125 ... 77 metric-benchmark pairs ($\alpha_\text
-                                                  {corrected} = 0.00065$).
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 <fig3_parity.pdf, id=208, 805.33336pt x 688.60988pt>
 File: fig3_parity.pdf Graphic file (type pdf)
 <use fig3_parity.pdf>
-Package pdftex.def Info: fig3_parity.pdf  used on input line 135.
+Package pdftex.def Info: fig3_parity.pdf  used on input line 136.
 (pdftex.def)             Requested size: 455.24411pt x 389.26494pt.
 
-Underfull \hbox (badness 1931) in paragraph at lines 146--147
+Underfull \hbox (badness 1931) in paragraph at lines 147--148
 \T1/ptm/m/n/10.95 (+20) pendix [][]E[][]). En-glish fer-til-ity ranges from 1.2
 
  []
@@ -598,116 +614,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [4 <./fig3_parity.pdf>]
-! Undefined control sequence.
-l.160 ...fter Bonferroni correction ($\alpha_\text
-                                                  {corrected} = 0.00065$, 77...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 <fig1_heatmap.pdf, id=296, 553.274pt x 283.7306pt>
 File: fig1_heatmap.pdf Graphic file (type pdf)
 <use fig1_heatmap.pdf>
-Package pdftex.def Info: fig1_heatmap.pdf  used on input line 164.
+Package pdftex.def Info: fig1_heatmap.pdf  used on input line 165.
 (pdftex.def)             Requested size: 455.24411pt x 233.46585pt.
-! Undefined control sequence.
-<recently read> \boldsymbol 
-                            
-l.174 ...f{Metric} & \textbf{Bench} & $\boldsymbol
-                                                  {\rho}$ & $\boldsymbol{p}$...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 175.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 175.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 175.
 
-! Undefined control sequence.
-<recently read> \boldsymbol 
-                            
-l.174 ...nch} & $\boldsymbol{\rho}$ & $\boldsymbol
-                                                  {p}$ & $\boldsymbol{r_\tex...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \boldsymbol 
-                            
-l.174 ...{\rho}$ & $\boldsymbol{p}$ & $\boldsymbol
-                                                  {r_\text{partial}}$ \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.174 ...& $\boldsymbol{p}$ & $\boldsymbol{r_\text
-                                                  {partial}}$ \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (10.5603pt too wide) in paragraph at lines 172--185
+Overfull \hbox (5.25964pt too wide) in paragraph at lines 173--186
  [][] 
  []
-
-! Undefined control sequence.
-<argument> ...s and benchmarks ($n=22$). $r_\text 
-                                                  {partial}$: partial correl...
-l.185 ...significant after Bonferroni correction.}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...s and benchmarks ($n=22$). $r_\text 
-                                                  {partial}$: partial correl...
-l.185 ...significant after Bonferroni correction.}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...s and benchmarks ($n=22$). $r_\text 
-                                                  {partial}$: partial correl...
-l.185 ...significant after Bonferroni correction.}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 
 <fig2_scatter.pdf, id=299, 543.10974pt x 428.13763pt>
 File: fig2_scatter.pdf Graphic file (type pdf)
 <use fig2_scatter.pdf>
-Package pdftex.def Info: fig2_scatter.pdf  used on input line 195.
+Package pdftex.def Info: fig2_scatter.pdf  used on input line 196.
 (pdftex.def)             Requested size: 219.08614pt x 172.70883pt.
 <fig7_vocab_vs_benchmark.pdf, id=302, 543.07562pt x 427.70578pt>
 File: fig7_vocab_vs_benchmark.pdf Graphic file (type pdf)
 <use fig7_vocab_vs_benchmark.pdf>
-Package pdftex.def Info: fig7_vocab_vs_benchmark.pdf  used on input line 208.
+Package pdftex.def Info: fig7_vocab_vs_benchmark.pdf  used on input line 209.
 (pdftex.def)             Requested size: 219.08614pt x 172.54115pt.
 <fig10_slope_vs_metric.pdf, id=303, 509.08427pt x 208.96332pt>
 File: fig10_slope_vs_metric.pdf Graphic file (type pdf)
 <use fig10_slope_vs_metric.pdf>
-Package pdftex.def Info: fig10_slope_vs_metric.pdf  used on input line 220.
+Package pdftex.def Info: fig10_slope_vs_metric.pdf  used on input line 221.
 (pdftex.def)             Requested size: 455.24411pt x 186.86952pt.
 
 
@@ -722,24 +660,24 @@ Underfull \vbox (badness 1057) has occurred while \output is active []
 
 
 [6 <./fig1_heatmap.pdf> <./fig2_scatter.pdf> <./fig7_vocab_vs_benchmark.pdf>]
-<fig8_multilingual_corr.pdf, id=526, 393.05185pt x 244.81839pt>
+<fig8_multilingual_corr.pdf, id=524, 393.05185pt x 244.81839pt>
 File: fig8_multilingual_corr.pdf Graphic file (type pdf)
 <use fig8_multilingual_corr.pdf>
-Package pdftex.def Info: fig8_multilingual_corr.pdf  used on input line 233.
+Package pdftex.def Info: fig8_multilingual_corr.pdf  used on input line 234.
 (pdftex.def)             Requested size: 219.08614pt x 136.4623pt.
 
 
-<fig9_qwen_scaling.pdf, id=529, 353.50821pt x 245.29893pt>
+<fig9_qwen_scaling.pdf, id=527, 353.50821pt x 245.29893pt>
 File: fig9_qwen_scaling.pdf Graphic file (type pdf)
 <use fig9_qwen_scaling.pdf>
-Package pdftex.def Info: fig9_qwen_scaling.pdf  used on input line 242.
+Package pdftex.def Info: fig9_qwen_scaling.pdf  used on input line 243.
 (pdftex.def)             Requested size: 219.08614pt x 152.02386pt.
 
 
 [7 <./fig10_slope_vs_metric.pdf> <./fig8_multilingual_corr.pdf>]
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 264--265
+Underfull \hbox (badness 1748) in paragraph at lines 265--266
 \T1/ptm/m/n/10.95 (+20) Japanese, PyThaiNLP for Thai) would yield
  []
 
@@ -778,43 +716,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [10
 
 ]
-! Undefined control sequence.
-<recently read> \boldsymbol 
-                            
-l.394 \textbf{Metric} & $\boldsymbol
-                                    {\beta}$ & \textbf{SE} & $\boldsymbol{z}...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \boldsymbol 
-                            
-l.394 ...mbol{\beta}$ & \textbf{SE} & $\boldsymbol
-                                                  {z}$ & $\boldsymbol{p}$ \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \boldsymbol 
-                            
-l.394 ...tbf{SE} & $\boldsymbol{z}$ & $\boldsymbol
-                                                  {p}$ \\
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-<fig4_fertility_by_lang.pdf, id=797, 627.4452pt x 775.4136pt>
+<fig4_fertility_by_lang.pdf, id=795, 627.4452pt x 775.4136pt>
 File: fig4_fertility_by_lang.pdf Graphic file (type pdf)
 <use fig4_fertility_by_lang.pdf>
-Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 412.
+Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 413.
 (pdftex.def)             Requested size: 455.24411pt x 562.60416pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -822,10 +727,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [11]
-<fig5_strr_by_lang.pdf, id=805, 624.74762pt x 775.4136pt>
+<fig5_strr_by_lang.pdf, id=804, 624.74762pt x 775.4136pt>
 File: fig5_strr_by_lang.pdf Graphic file (type pdf)
 <use fig5_strr_by_lang.pdf>
-Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 421.
+Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 422.
 (pdftex.def)             Requested size: 455.24411pt x 565.05336pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -833,10 +738,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [12 <./fig4_fertility_by_lang.pdf>]
-<fig6_cpt_by_lang.pdf, id=876, 617.07835pt x 775.4136pt>
+<fig6_cpt_by_lang.pdf, id=875, 617.07835pt x 775.4136pt>
 File: fig6_cpt_by_lang.pdf Graphic file (type pdf)
 <use fig6_cpt_by_lang.pdf>
-Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 430.
+Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 431.
 (pdftex.def)             Requested size: 455.24411pt x 572.0578pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -849,19 +754,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [14 <./fig6_cpt_by_lang.pdf>]
-<fig11_partial_residuals.pdf, id=1012, 747.46826pt x 315.64299pt>
+<fig11_partial_residuals.pdf, id=1011, 719.3374pt x 336.41937pt>
 File: fig11_partial_residuals.pdf Graphic file (type pdf)
 <use fig11_partial_residuals.pdf>
-Package pdftex.def Info: fig11_partial_residuals.pdf  used on input line 473.
-(pdftex.def)             Requested size: 455.24411pt x 192.24814pt.
+Package pdftex.def Info: fig11_partial_residuals.pdf  used on input line 474.
+(pdftex.def)             Requested size: 455.24411pt x 212.91039pt.
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 48
-1.
+2.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 481.
+(Font)              scaled to size 10.95pt on input line 482.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -880,35 +785,34 @@ Package rerunfilecheck Info: File `acl_latex.out' has not changed.
 (rerunfilecheck)             Checksum: A3769ED1883DF7BA168D0FB407710EE9;3881.
  ) 
 Here is how much of TeX's memory you used:
- 14925 strings out of 474662
- 241183 string characters out of 5751108
- 703266 words of memory out of 5000000
- 37346 multiletter control sequences out of 15000+600000
- 609711 words of font info for 292 fonts, out of 8000000 for 9000
+ 15662 strings out of 474662
+ 250884 string characters out of 5751108
+ 714393 words of memory out of 5000000
+ 38024 multiletter control sequences out of 15000+600000
+ 624768 words of font info for 329 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 84i,11n,93p,1704b,695s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,16n,93p,1704b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/inconsolata/Incon
 solata-zi4r.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmex10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025basic/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025basic/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025basic/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025basic
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2025ba
-sic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025basi
-c/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025basic/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf-di
-st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on acl_latex.pdf (16 pages, 732217 bytes).
+blic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/ty
+pe1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2025basic/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025basic/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025basic/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025basic/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025basic
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025ba
+sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/202
+5basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025b
+asic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025basic/
+texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025basic/texmf
+-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on acl_latex.pdf (16 pages, 720899 bytes).
 PDF statistics:
  1194 PDF objects out of 1200 (max. 8388607)
- 485 compressed objects within 5 object streams
+ 486 compressed objects within 5 object streams
  98 named destinations out of 1000 (max. 500000)
- 45832 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 61704 words of extra memory for PDF output out of 61914 (max. 10000000)
 
