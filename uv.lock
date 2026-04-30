@@ -2443,6 +2443,22 @@ wheels = [
 ]
 
 [[package]]
+name = "textalloc"
+version = "1.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "packaging" },
+    { name = "tqdm" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7d/5d/c56e3e7b4ba8a1f65a8288ef64d3128914d6e4092de4a4d140e3afc93ad9/textalloc-1.2.3.tar.gz", hash = "sha256:f394012a93a0109222fee8cb854a3499731ede3c716e5c0445cd49827e260517", size = 20589, upload-time = "2026-03-16T20:07:45.959Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/20/e4/570aa02975bfb7382c80e4aab2da3c3a2c1fbdc0b85d004b7cbce3fd62d0/textalloc-1.2.3-py3-none-any.whl", hash = "sha256:31d240e1aa925470c2029974c03366d6385524c09c7115d7635e7668dc5b911a", size = 20545, upload-time = "2026-03-16T20:07:44.623Z" },
+]
+
+[[package]]
 name = "tiktoken"
 version = "0.12.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2541,6 +2557,7 @@ dependencies = [
     { name = "datasets" },
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "textalloc" },
     { name = "tokenizers" },
 ]
 
@@ -2589,6 +2606,7 @@ requires-dist = [
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=5.0" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.8" },
     { name = "scipy", marker = "extra == 'experiments'", specifier = ">=1.11" },
+    { name = "textalloc", specifier = ">=1.2.3" },
     { name = "tiktoken", marker = "extra == 'experiments'", specifier = ">=0.12.0" },
     { name = "tokenizers", specifier = ">=0.19" },
     { name = "toklens", extras = ["viz", "dev", "experiments"], marker = "extra == 'all'" },

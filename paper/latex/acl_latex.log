@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.12)  30 APR 2026 10:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.12)  30 APR 2026 14:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -579,11 +579,11 @@ Underfull \hbox (badness 2698) in paragraph at lines 160--161
  []
 
 [4]
-<fig1_heatmap.pdf, id=262, 625.74365pt x 320.1915pt>
+<fig1_heatmap.pdf, id=262, 351.01157pt x 211.6921pt>
 File: fig1_heatmap.pdf Graphic file (type pdf)
 <use fig1_heatmap.pdf>
 Package pdftex.def Info: fig1_heatmap.pdf  used on input line 178.
-(pdftex.def)             Requested size: 455.24411pt x 232.95125pt.
+(pdftex.def)             Requested size: 455.24411pt x 274.56009pt.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
 (Font)              Font shape `U/lasy/m/n' tried instead on input line 188.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
@@ -606,11 +606,11 @@ File: fig7_vocab_vs_benchmark.pdf Graphic file (type pdf)
 <use fig7_vocab_vs_benchmark.pdf>
 Package pdftex.def Info: fig7_vocab_vs_benchmark.pdf  used on input line 222.
 (pdftex.def)             Requested size: 219.08614pt x 170.8606pt.
-<fig10_slope_vs_metric.pdf, id=344, 934.60165pt x 299.37157pt>
+<fig10_slope_vs_metric.pdf, id=344, 789.98524pt x 255.49767pt>
 File: fig10_slope_vs_metric.pdf Graphic file (type pdf)
 <use fig10_slope_vs_metric.pdf>
 Package pdftex.def Info: fig10_slope_vs_metric.pdf  used on input line 234.
-(pdftex.def)             Requested size: 455.24411pt x 145.82085pt.
+(pdftex.def)             Requested size: 455.24411pt x 147.23749pt.
  [6 <./fig1_heatmap.pdf> <./fig2_scatter.pdf>]
 Underfull \hbox (badness 3439) in paragraph at lines 245--246
  []\T1/ptm/b/n/10.95 (+20) Robustness checks.[] \T1/ptm/m/n/10.95 (+20) We run 
@@ -622,13 +622,13 @@ Underfull \hbox (badness 7631) in paragraph at lines 245--246
 \T1/ptm/m/n/10.95 (+20) ity anal-y-ses; full co-ef-fi-cients are in Ap-
  []
 
-<fig8_multilingual_corr.pdf, id=488, 393.05185pt x 244.81839pt>
+<fig8_multilingual_corr.pdf, id=481, 393.05185pt x 244.81839pt>
 File: fig8_multilingual_corr.pdf Graphic file (type pdf)
 <use fig8_multilingual_corr.pdf>
 Package pdftex.def Info: fig8_multilingual_corr.pdf  used on input line 249.
 (pdftex.def)             Requested size: 219.08614pt x 136.4623pt.
 [7 <./fig7_vocab_vs_benchmark.pdf>]
-<fig9_qwen_scaling.pdf, id=566, 353.50821pt x 245.29893pt>
+<fig9_qwen_scaling.pdf, id=559, 353.50821pt x 245.29893pt>
 File: fig9_qwen_scaling.pdf Graphic file (type pdf)
 <use fig9_qwen_scaling.pdf>
 Package pdftex.def Info: fig9_qwen_scaling.pdf  used on input line 258.
@@ -678,7 +678,7 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 10.0pt on input line 600.
  [15] [16]
-<fig4_fertility_by_lang.pdf, id=881, 628.13902pt x 792.75842pt>
+<fig4_fertility_by_lang.pdf, id=876, 628.13902pt x 792.75842pt>
 File: fig4_fertility_by_lang.pdf Graphic file (type pdf)
 <use fig4_fertility_by_lang.pdf>
 Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 641.
@@ -686,7 +686,7 @@ Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 641.
  [17
 
  <./fig4_fertility_by_lang.pdf>]
-<fig5_strr_by_lang.pdf, id=954, 625.44144pt x 792.75842pt>
+<fig5_strr_by_lang.pdf, id=949, 625.44144pt x 792.75842pt>
 File: fig5_strr_by_lang.pdf Graphic file (type pdf)
 <use fig5_strr_by_lang.pdf>
 Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 654.
@@ -695,7 +695,7 @@ Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 654.
 [18
 
  <./fig5_strr_by_lang.pdf>]
-<fig6_cpt_by_lang.pdf, id=1021, 617.77216pt x 792.75842pt>
+<fig6_cpt_by_lang.pdf, id=1016, 617.77216pt x 792.75842pt>
 File: fig6_cpt_by_lang.pdf Graphic file (type pdf)
 <use fig6_cpt_by_lang.pdf>
 Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 667.
@@ -716,8 +716,8 @@ Package rerunfilecheck Info: File `acl_latex.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  15469 strings out of 467525
- 246316 string characters out of 5418982
- 722998 words of memory out of 5000000
+ 246313 string characters out of 5418982
+ 723998 words of memory out of 5000000
  43652 multiletter control sequences out of 15000+600000
  698878 words of font info for 355 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -738,9 +738,9 @@ exmf/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on acl_latex.pdf (19 pages, 658827 bytes).
+Output written on acl_latex.pdf (19 pages, 650014 bytes).
 PDF statistics:
- 1193 PDF objects out of 1200 (max. 8388607)
+ 1188 PDF objects out of 1200 (max. 8388607)
  551 compressed objects within 6 object streams
  118 named destinations out of 1000 (max. 500000)
  69387 words of extra memory for PDF output out of 74296 (max. 10000000)
