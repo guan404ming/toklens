@@ -11,9 +11,12 @@ Open-source toolkit for evaluating tokenizer quality across languages using six 
 3. **STRR significantly predicts multilingual performance.** On MMLU-ProX, linear mixed-effects models show STRR has a large positive effect (β = +5.7, z = 18.5, p < 0.001).
 4. **Higher STRR correlates with steeper scaling.** A controlled experiment on the Qwen2.5 family (fixed tokenizer, varying model size) shows languages with higher STRR scale more steeply (ρ = 0.91, p < 0.001).
 
-### Fertility vs. average benchmark score
+### Benchmark correlations
 
-![Fertility scatter](assets/fig2_scatter.png)
+<table><tr>
+<td><img src="assets/fig2_scatter.png"></td>
+<td><img src="assets/fig7_vocab_vs_benchmark.png"></td>
+</tr></table>
 
 ### Per-language scaling slope vs. tokenizer metrics (Qwen2.5 family)
 
