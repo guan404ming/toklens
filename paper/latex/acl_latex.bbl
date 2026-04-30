@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahia et~al.(2023)Ahia, Kreutzer, and
@@ -146,14 +146,6 @@ Rico Sennrich, Barry Haddow, and Alexandra Birch. 2016.
 \newblock In \emph{Proceedings of the 54th Annual Meeting of the Association
   for Computational Linguistics (Volume 1: Long Papers)}, pages 1715--1725.
   Association for Computational Linguistics.
-
-\bibitem[{Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi,
-  Babaei, Bashlykov, Batra, Bhargava, Bhosale et~al.}]{touvron2023llama}
-Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine
-  Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale,
-  and 1 others. 2023.
-\newblock Llama 2: Open foundation and fine-tuned chat models.
-\newblock \emph{arXiv preprint arXiv:2307.09288}.
 
 \bibitem[{Xue et~al.(2022)Xue, Barua, Constant, Al-Rfou, Narang, Kale, Roberts,
   and Raffel}]{xue2022byt5}

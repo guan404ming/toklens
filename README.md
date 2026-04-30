@@ -1,5 +1,7 @@
 # TokLens: A Multilingual Lens on Tokenizer Quality for LLMs
 
+[![PyPI](https://img.shields.io/pypi/v/toklens)](https://pypi.org/project/toklens/)
+
 Accepted to ACL 2026 SRW. 🎉
 
 Open-source toolkit for evaluating tokenizer quality across languages using six intrinsic metrics. We evaluate 24 tokenizers from major LLM families across 15 typologically diverse languages and correlate with downstream performance.
@@ -14,13 +16,13 @@ Open-source toolkit for evaluating tokenizer quality across languages using six 
 ### Benchmark correlations
 
 <table><tr>
-<td><img src="assets/fig2_scatter.png"></td>
-<td><img src="assets/fig7_vocab_vs_benchmark.png"></td>
+<td><img src="https://raw.githubusercontent.com/guan404ming/toklens/main/assets/fig2_scatter.png"></td>
+<td><img src="https://raw.githubusercontent.com/guan404ming/toklens/main/assets/fig7_vocab_vs_benchmark.png"></td>
 </tr></table>
 
 ### Per-language scaling slope vs. tokenizer metrics (Qwen2.5 family)
 
-![Scaling slope vs metrics](assets/fig10_slope_vs_metric.png)
+![Scaling slope vs metrics](https://raw.githubusercontent.com/guan404ming/toklens/main/assets/fig10_slope_vs_metric.png)
 
 ## Metrics
 
