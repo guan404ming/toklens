@@ -15,6 +15,21 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage[section]{placeins}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\lstdefinestyle{toklens}{
+  basicstyle=\small\ttfamily,
+  backgroundcolor=\color[gray]{0.95},
+  frame=single,
+  framesep=4pt,
+  rulecolor=\color[gray]{0.75},
+  breaklines=true,
+  breakatwhitespace=false,
+  showstringspaces=false,
+  keywordstyle=\color{MidnightBlue}\bfseries,
+  commentstyle=\color[gray]{0.5}\itshape,
+  stringstyle=\color{ForestGreen},
+}
 
 \title{TokLens: A Multilingual Lens on Tokenizer Quality for LLMs}
 
@@ -45,6 +60,8 @@ We present TokLens, a lightweight, open-source Python toolkit that computes six 
     \item A comprehensive evaluation of 24 tokenizers from 2019--2025, documenting the evolution of multilingual tokenizer quality.
     \item A three-tier statistical analysis: (a) English benchmarks show no significant correlation after Bonferroni correction; (b) multilingual benchmarks (MMLU-ProX) show significant associations via linear mixed-effects models ($z$ up to 18.5); (c) a controlled experiment with the Qwen2.5 family shows that tokenizer quality is correlated with the per-language scaling pattern ($\rho = 0.91$). All claims are correlational; see Limitations for the residual confound with pretraining data.
 \end{enumerate}
+
+Code and data are available at \url{https://github.com/guan404ming/toklens}.
 
 \section{Related Work}
 
@@ -157,17 +174,17 @@ Among Latin-script languages, parity ratios are generally low (1.0--2.5x) across
 
 \subsection{Fertility and STRR Across Languages}
 
-Fertility varies enormously across languages (Appendix~\ref{app:fertility}). English fertility ranges from 1.2 (Gemma-2) to 1.6 (GPT-2). For Japanese, the range is dramatic: 91.1 for GPT-2 versus 3.5 for Gemma-2, driven by byte-level fallback where each Japanese character (3 UTF-8 bytes) becomes 3 tokens when no vocabulary entry matches.
+Fertility varies enormously across languages (Appendix~\ref{app:fertility}). English fertility ranges from 1.4 (Gemma-2) to 1.6 (GPT-2). For Japanese, the range is dramatic: 91.1 for GPT-2 versus 37 for Gemma-2, driven by byte-level fallback where each Japanese character (3 UTF-8 bytes) becomes 3 tokens when no vocabulary entry matches.
 
 Korean is an interesting case: it uses a phonetic alphabet (Hangul) with compositional syllable blocks. Tokenizers with good Unicode handling (Qwen2.5, Gemma-2) achieve fertility of 2--4, while byte-fallback tokenizers (GPT-2, Falcon) produce 8--9 because each Hangul syllable is 3 UTF-8 bytes.
 
-Thai presents a different challenge: it does not use spaces between words, so whitespace-delimited ``words'' in Thai text are often entire phrases. This makes absolute fertility values less comparable to other languages, but relative comparisons across tokenizers remain informative. GPT-2 produces a fertility of 53.9 on Thai, while Gemma-2 achieves 4.2, a 13x improvement driven by the inclusion of Thai character sequences in the vocabulary.
+Thai presents a different challenge: it does not use spaces between words, so whitespace-delimited ``words'' in Thai text are often entire phrases. This makes absolute fertility values less comparable to other languages, but relative comparisons across tokenizers remain informative. GPT-2 produces a fertility of 53.9 on Thai, while Gemma-2 achieves 10.9, a 5x improvement driven by the inclusion of Thai character sequences in the vocabulary.
 
-For STRR, English ranges from 0.55 (GPT-2) to 0.77 (Gemma-2), meaning that even the best tokenizer splits nearly a quarter of English words into subword pieces. Arabic STRR drops below 0.01 for most tokenizers, reflecting both Arabic's rich morphology (where common words include prefixed articles, prepositions, and pronominal suffixes) and limited vocabulary allocation to Arabic script. Vietnamese, despite using Latin script, has low STRR (0.07--0.20) due to diacritics creating character combinations rarely seen in English-centric training corpora. The full STRR heatmap is in Appendix~\ref{app:strr}.
+For STRR, English ranges from 0.61 (GPT-2) to 0.73 (Gemma-2), meaning that even the best tokenizer splits nearly a quarter of English words into subword pieces. Arabic STRR drops below 0.01 for most tokenizers, reflecting both Arabic's rich morphology (where common words include prefixed articles, prepositions, and pronominal suffixes) and limited vocabulary allocation to Arabic script. Vietnamese, despite using Latin script, has low STRR (0.07--0.20) due to diacritics creating character combinations rarely seen in English-centric training corpora. The full STRR heatmap is in Appendix~\ref{app:strr}.
 
 \subsection{Characters Per Token}
 
-CPT varies widely across languages (Appendix~\ref{app:cpt}). For English, CPT ranges from 4.3 (Llama-2) to 7.0 (Gemma-2). For Chinese, CPT is below 1.0 for most tokenizers, meaning each character produces more than one token on average. The exceptions are BLOOM (2.6), Qwen2.5 (2.8), and Gemma-2 (2.2), which have sufficient CJK vocabulary to compress multiple characters into single tokens. The difference between CPT and compression ratio (CR) is most visible for CJK and Thai: since Chinese characters use 3 UTF-8 bytes each, a CPT of 0.6 (GPT-2 on Chinese) corresponds to a CR of 1.5, revealing that the tokenizer does compress bytes even though it expands characters.
+CPT varies widely across languages (Appendix~\ref{app:cpt}). For English, CPT ranges from 4.3 (Llama-2) to 5.2 (Gemma-2). For Chinese, CPT is below 1.0 for most tokenizers, meaning each character produces more than one token on average. The exceptions are BLOOM (2.6), Qwen2.5 (2.8), and Gemma-2 (2.2), which have sufficient CJK vocabulary to compress multiple characters into single tokens. The difference between CPT and compression ratio (CR) is most visible for CJK and Thai: since Chinese characters use 3 UTF-8 bytes each, a CPT of 0.6 (GPT-2 on Chinese) corresponds to a CR of 1.5, revealing that the tokenizer does compress bytes even though it expands characters.
 
 \subsection{Correlation with Downstream Performance}
 
@@ -292,6 +309,11 @@ Finally, the English-only sample size ($n=22$) limits statistical power. The mul
 \section*{Ethics Statement}
 
 This work evaluates tokenizer quality across languages, relevant to the fairness of language technology. Our finding that tokenizers produce dramatically different token counts across languages has implications for API pricing, context window utilization, and model accessibility. We release TokLens as open source to enable tokenizer fairness audits. No human subjects were involved in this research.
+
+% Acknowledgements
+\section*{Acknowledgements}
+
+We thank Modal for the compute credits that supported the experiments in this work.
 
 % References
 \bibliography{custom}
@@ -608,7 +630,7 @@ Downstream linkage & no & MMLU-ProX, OLM-v2 \\
 
 TokLens is a Python library installable via \texttt{pip install toklens}. It requires Python 3.10+ and depends on the HuggingFace \texttt{tokenizers} library and \texttt{numpy}. The following code demonstrates basic usage:
 
-\begin{verbatim}
+\begin{lstlisting}[style=toklens, language=Python]
 from toklens import Analyzer
 
 analyzer = Analyzer.from_pretrained(
@@ -618,17 +640,17 @@ report = analyzer.evaluate(
     langs=["en", "zh", "ja", "ar"]
 )
 report.print_table()
-\end{verbatim}
+\end{lstlisting}
 
 The toolkit computes all six metrics (fertility, CPT, compression ratio, STRR, NSL, parity) in a single pass. For the parity metric, a reference language (default: English) is required. Corpora are loaded from Wikipedia via HuggingFace \texttt{datasets} and cached locally after first download. The command-line interface supports quick evaluation:
 
-\begin{verbatim}
+\begin{lstlisting}[style=toklens, language=bash]
 toklens eval meta-llama/Llama-3.1-8B \
     --langs en zh ja ar
 toklens compare \
     meta-llama/Llama-2-7b-hf \
     meta-llama/Llama-3.1-8B
-\end{verbatim}
+\end{lstlisting}
 
 \clearpage
 \section{Per-language Fertility Heatmap}

@@ -447,8 +447,9 @@ def fig10_slope_vs_metric(
             textsize=8,
             linecolor="gray",
             linewidth=0.4,
-            max_distance=0.25,
-            margin=0.01,
+            max_distance=0.6,
+            margin=0.03,
+            nbr_candidates=300,
         )
 
     fig.tight_layout()

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.12)  30 APR 2026 14:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.12)  30 APR 2026 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,57 +414,86 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
+(/Users/wchiu/Library/texmf/tex/latex/listings/listings.sty
+\lst@mode=\count322
+\lst@gtempboxa=\box58
+\lst@token=\toks33
+\lst@length=\count323
+\lst@currlwidth=\dimen194
+\lst@column=\count324
+\lst@pos=\count325
+\lst@lostspace=\dimen195
+\lst@width=\dimen196
+\lst@newlines=\count326
+\lst@lineno=\count327
+\lst@maxwidth=\dimen197
+
+(/Users/wchiu/Library/texmf/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(/Users/wchiu/Library/texmf/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count328
+\lst@skipnumbers=\count329
+\lst@framebox=\box59
+)
+(/Users/wchiu/Library/texmf/tex/latex/listings/listings.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
 (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count322
+\l__color_backend_stack_int=\count330
 )
 (./acl_latex.aux)
 \openout1 = `acl_latex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count323
-\scratchdimen=\dimen194
-\scratchbox=\box58
-\nofMPsegments=\count324
-\nofMParguments=\count325
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count326
-\MPscratchDim=\dimen195
-\MPnumerator=\count327
-\makeMPintoPDFobject=\count328
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count331
+\scratchdimen=\dimen198
+\scratchbox=\box60
+\nofMPsegments=\count332
+\nofMParguments=\count333
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count334
+\MPscratchDim=\dimen199
+\MPnumerator=\count335
+\makeMPintoPDFobject=\count336
+\everyMPtoPDFconversion=\toks35
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/local/texlive/2026/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -507,19 +536,20 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 40.
 (./acl_latex.out) (./acl_latex.out)
 \@outlinefile=\write3
 \openout3 = `acl_latex.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 25.
-Package microtype Info: Applying patch `item' on input line 25.
-Package microtype Info: Applying patch `toc' on input line 25.
-Package microtype Info: Applying patch `eqnum' on input line 25.
-Package microtype Info: Applying patch `footnote' on input line 25.
-Package microtype Info: Applying patch `verbatim' on input line 25.
-LaTeX Info: Redefining \microtypesetup on input line 25.
+LaTeX Info: Redefining \microtypecontext on input line 40.
+Package microtype Info: Applying patch `item' on input line 40.
+Package microtype Info: Applying patch `toc' on input line 40.
+Package microtype Info: Applying patch `eqnum' on input line 40.
+Package microtype Info: Applying patch `footnote' on input line 40.
+Package microtype Info: Applying patch `verbatim' on input line 40.
+LaTeX Info: Redefining \microtypesetup on input line 40.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -538,24 +568,26 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
+\c@lstlisting=\count337
+
 (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 27
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 42
 .
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 27
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 42
 .
 
 (/usr/local/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 27.
+(Font)              scaled to size 12.0pt on input line 42.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -566,82 +598,86 @@ local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2
 
 
 
-] [2] [3]
-<fig3_parity.pdf, id=246, 615.86949pt x 549.93124pt>
+]
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 10.95pt on input line 64.
+ [2] [3]
+<fig3_parity.pdf, id=250, 615.86949pt x 549.93124pt>
 File: fig3_parity.pdf Graphic file (type pdf)
 <use fig3_parity.pdf>
-Package pdftex.def Info: fig3_parity.pdf  used on input line 149.
+Package pdftex.def Info: fig3_parity.pdf  used on input line 166.
 (pdftex.def)             Requested size: 455.24411pt x 406.51479pt.
 
-Underfull \hbox (badness 2698) in paragraph at lines 160--161
-\T1/ptm/m/n/10.95 (+20) pendix [][]I[][]). En-glish fer-til-ity ranges from 1.2
+Underfull \hbox (badness 2698) in paragraph at lines 177--178
+\T1/ptm/m/n/10.95 (+20) pendix [][]I[][]). En-glish fer-til-ity ranges from 1.4
 
  []
 
 [4]
-<fig1_heatmap.pdf, id=262, 351.01157pt x 211.6921pt>
+<fig1_heatmap.pdf, id=264, 351.01157pt x 211.6921pt>
 File: fig1_heatmap.pdf Graphic file (type pdf)
 <use fig1_heatmap.pdf>
-Package pdftex.def Info: fig1_heatmap.pdf  used on input line 178.
+Package pdftex.def Info: fig1_heatmap.pdf  used on input line 195.
 (pdftex.def)             Requested size: 455.24411pt x 274.56009pt.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 188.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 205.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 188.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 205.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 188.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 205.
 
-Overfull \hbox (5.25964pt too wide) in paragraph at lines 186--199
+Overfull \hbox (5.25964pt too wide) in paragraph at lines 203--216
  [][] 
  []
 
 [5 <./fig3_parity.pdf>]
-<fig2_scatter.pdf, id=341, 549.99625pt x 428.5655pt>
+<fig2_scatter.pdf, id=343, 549.99625pt x 428.5655pt>
 File: fig2_scatter.pdf Graphic file (type pdf)
 <use fig2_scatter.pdf>
-Package pdftex.def Info: fig2_scatter.pdf  used on input line 209.
+Package pdftex.def Info: fig2_scatter.pdf  used on input line 226.
 (pdftex.def)             Requested size: 219.08614pt x 170.7169pt.
-<fig7_vocab_vs_benchmark.pdf, id=343, 549.99625pt x 428.92622pt>
+<fig7_vocab_vs_benchmark.pdf, id=345, 549.99625pt x 428.92622pt>
 File: fig7_vocab_vs_benchmark.pdf Graphic file (type pdf)
 <use fig7_vocab_vs_benchmark.pdf>
-Package pdftex.def Info: fig7_vocab_vs_benchmark.pdf  used on input line 222.
+Package pdftex.def Info: fig7_vocab_vs_benchmark.pdf  used on input line 239.
 (pdftex.def)             Requested size: 219.08614pt x 170.8606pt.
-<fig10_slope_vs_metric.pdf, id=344, 789.98524pt x 255.49767pt>
+ [6 <./fig1_heatmap.pdf> <./fig2_scatter.pdf>]
+<fig10_slope_vs_metric.pdf, id=475, 789.98524pt x 255.49767pt>
 File: fig10_slope_vs_metric.pdf Graphic file (type pdf)
 <use fig10_slope_vs_metric.pdf>
-Package pdftex.def Info: fig10_slope_vs_metric.pdf  used on input line 234.
+Package pdftex.def Info: fig10_slope_vs_metric.pdf  used on input line 251.
 (pdftex.def)             Requested size: 455.24411pt x 147.23749pt.
- [6 <./fig1_heatmap.pdf> <./fig2_scatter.pdf>]
-Underfull \hbox (badness 3439) in paragraph at lines 245--246
+
+Underfull \hbox (badness 3439) in paragraph at lines 262--263
  []\T1/ptm/b/n/10.95 (+20) Robustness checks.[] \T1/ptm/m/n/10.95 (+20) We run 
 three sen-si-tiv-
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 245--246
+Underfull \hbox (badness 7631) in paragraph at lines 262--263
 \T1/ptm/m/n/10.95 (+20) ity anal-y-ses; full co-ef-fi-cients are in Ap-
  []
 
-<fig8_multilingual_corr.pdf, id=481, 393.05185pt x 244.81839pt>
+<fig8_multilingual_corr.pdf, id=483, 393.05185pt x 244.81839pt>
 File: fig8_multilingual_corr.pdf Graphic file (type pdf)
 <use fig8_multilingual_corr.pdf>
-Package pdftex.def Info: fig8_multilingual_corr.pdf  used on input line 249.
+Package pdftex.def Info: fig8_multilingual_corr.pdf  used on input line 266.
 (pdftex.def)             Requested size: 219.08614pt x 136.4623pt.
 [7 <./fig7_vocab_vs_benchmark.pdf>]
-<fig9_qwen_scaling.pdf, id=559, 353.50821pt x 245.29893pt>
+<fig9_qwen_scaling.pdf, id=561, 353.50821pt x 245.29893pt>
 File: fig9_qwen_scaling.pdf Graphic file (type pdf)
 <use fig9_qwen_scaling.pdf>
-Package pdftex.def Info: fig9_qwen_scaling.pdf  used on input line 258.
+Package pdftex.def Info: fig9_qwen_scaling.pdf  used on input line 275.
 (pdftex.def)             Requested size: 219.08614pt x 152.02386pt.
 
-Underfull \hbox (badness 3635) in paragraph at lines 266--267
+Underfull \hbox (badness 3635) in paragraph at lines 283--284
  []\T1/ptm/b/n/10.95 (+20) Interpreting the En-glish null re-sult.[] \T1/ptm/m/
 n/10.95 (+20) The
  []
 
 [8 <./fig10_slope_vs_metric.pdf> <./fig8_multilingual_corr.pdf> <./fig9_qwen_sc
 aling.pdf>]
-Underfull \hbox (badness 1748) in paragraph at lines 285--286
+Underfull \hbox (badness 1748) in paragraph at lines 302--303
 \T1/ptm/m/n/10.95 (+20) Japanese, PyThaiNLP for Thai) would yield
  []
 
@@ -672,33 +708,42 @@ Underfull \hbox (badness 1062) in paragraph at lines 84--87
 
 ] [13] [14]
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 541.
+(Font)              scaled to size 9.0pt on input line 592.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 570.
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 600.
- [15] [16]
-<fig4_fertility_by_lang.pdf, id=876, 628.13902pt x 792.75842pt>
+(Font)              scaled to size 10.0pt on input line 622.
+ [15]
+(/Users/wchiu/Library/texmf/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
+(Font)              scaled to size 9.0pt on input line 634.
+
+(/Users/wchiu/Library/texmf/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(/Users/wchiu/Library/texmf/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) [16]
+<fig4_fertility_by_lang.pdf, id=897, 628.13902pt x 792.75842pt>
 File: fig4_fertility_by_lang.pdf Graphic file (type pdf)
 <use fig4_fertility_by_lang.pdf>
-Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 641.
+Package pdftex.def Info: fig4_fertility_by_lang.pdf  used on input line 663.
 (pdftex.def)             Requested size: 455.24411pt x 574.55974pt.
  [17
 
  <./fig4_fertility_by_lang.pdf>]
-<fig5_strr_by_lang.pdf, id=949, 625.44144pt x 792.75842pt>
+<fig5_strr_by_lang.pdf, id=969, 625.44144pt x 792.75842pt>
 File: fig5_strr_by_lang.pdf Graphic file (type pdf)
 <use fig5_strr_by_lang.pdf>
-Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 654.
+Package pdftex.def Info: fig5_strr_by_lang.pdf  used on input line 676.
 (pdftex.def)             Requested size: 455.24411pt x 577.02742pt.
-
-[18
+ [18
 
  <./fig5_strr_by_lang.pdf>]
-<fig6_cpt_by_lang.pdf, id=1016, 617.77216pt x 792.75842pt>
+<fig6_cpt_by_lang.pdf, id=1036, 617.77216pt x 792.75842pt>
 File: fig6_cpt_by_lang.pdf Graphic file (type pdf)
 <use fig6_cpt_by_lang.pdf>
-Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 667.
+Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 689.
 (pdftex.def)             Requested size: 455.24411pt x 584.21275pt.
  [19
 
@@ -707,41 +752,38 @@ Package pdftex.def Info: fig6_cpt_by_lang.pdf  used on input line 667.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `acl_latex.out' has not changed.
 (rerunfilecheck)             Checksum: BF378E196F1AC0418800EF6CA2EFEF62;4254.
  ) 
 Here is how much of TeX's memory you used:
- 15469 strings out of 467525
- 246313 string characters out of 5418982
- 723998 words of memory out of 5000000
- 43652 multiletter control sequences out of 15000+600000
- 698878 words of font info for 355 fonts, out of 8000000 for 9000
+ 17370 strings out of 467525
+ 271148 string characters out of 5418982
+ 987225 words of memory out of 5000000
+ 45517 multiletter control sequences out of 15000+600000
+ 699191 words of font info for 356 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,16n,93p,1721b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,16n,93p,1721b,1431s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/Inconsolat
-a-zi4r.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmex10.pf
-b></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users
-/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/wchiu/Lib
-rary/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/wchiu/Library/texmf
-/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></Users/wchiu/Library/texmf/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></Users/wchiu/Library/texmf/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfo
-nts/cm/cmr9.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy6.pfb></U
-sers/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/wchiu
-/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/wchiu/Library/t
-exmf/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/t
-imes/utmri8a.pfb>
-Output written on acl_latex.pdf (19 pages, 650014 bytes).
+a-zi4b.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/I
+nconsolata-zi4r.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/
+cmex10.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/
+wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/wchiu/Libr
+ary/texmf/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></Users/wchiu/Library/
+texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/wchiu/Library/texmf/font
+s/type1/public/amsfonts/cm/cmr8.pfb></Users/wchiu/Library/texmf/fonts/type1/pub
+lic/amsfonts/cm/cmr9.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy
+6.pfb></Users/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Us
+ers/wchiu/Library/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/wchiu/
+Library/texmf/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026
+/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on acl_latex.pdf (19 pages, 668323 bytes).
 PDF statistics:
- 1188 PDF objects out of 1200 (max. 8388607)
- 551 compressed objects within 6 object streams
- 118 named destinations out of 1000 (max. 500000)
- 69387 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 1215 PDF objects out of 1440 (max. 8388607)
+ 576 compressed objects within 6 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 69899 words of extra memory for PDF output out of 74296 (max. 10000000)
 
