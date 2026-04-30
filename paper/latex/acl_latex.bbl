@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahia et~al.(2023)Ahia, Kreutzer, and
@@ -18,6 +18,14 @@ Mehdi Ali, Michael Fromm, Klaudia Thellmann, Richard Perea, Maximilian Nagel,
   Hees, and Sven Schmeier. 2024.
 \newblock Tokenizer choice for {LLM} training: Negligible or crucial?
 \newblock \emph{arXiv preprint arXiv:2310.08754}.
+
+\bibitem[{Alt{\i}nta{\c{s}} et~al.(2025)Alt{\i}nta{\c{s}}, Ehghaghi, Lester,
+  Liu, Zhao, Ciccone, and Raffel}]{altintas2025toksuite}
+G{\"u}l~Sena Alt{\i}nta{\c{s}}, Malikeh Ehghaghi, Brian Lester, Fengyuan Liu,
+  Wanru Zhao, Marco Ciccone, and Colin Raffel. 2025.
+\newblock {TokSuite}: Measuring the impact of tokenizer choice on language
+  model behavior.
+\newblock \emph{arXiv preprint arXiv:2512.20757}.
 
 \bibitem[{{BigScience Workshop}(2023)}]{workshop2023bloom}
 {BigScience Workshop}. 2023.
@@ -110,6 +118,14 @@ Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
 \newblock Language models are unsupervised multitask learners.
 \newblock \emph{OpenAI Blog}.
 
+\bibitem[{Rust et~al.(2023)Rust, Lotz, Bugliarello, Salesky, de~Lhoneux, and
+  Elliott}]{rust2023pixel}
+Phillip Rust, Jonas~F. Lotz, Emanuele Bugliarello, Elizabeth Salesky, Miryam
+  de~Lhoneux, and Desmond Elliott. 2023.
+\newblock Language modelling with pixels.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}.
+
 \bibitem[{Rust et~al.(2021)Rust, Pfeiffer, Vulic, Ruder, and
   Gurevych}]{rust-etal-2021-good}
 Phillip Rust, Jonas Pfeiffer, Ivan Vulic, Sebastian Ruder, and Iryna Gurevych.
@@ -138,6 +154,15 @@ Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine
   and 1 others. 2023.
 \newblock Llama 2: Open foundation and fine-tuned chat models.
 \newblock \emph{arXiv preprint arXiv:2307.09288}.
+
+\bibitem[{Xue et~al.(2022)Xue, Barua, Constant, Al-Rfou, Narang, Kale, Roberts,
+  and Raffel}]{xue2022byt5}
+Linting Xue, Aditya Barua, Noah Constant, Rami Al-Rfou, Sharan Narang, Mihir
+  Kale, Adam Roberts, and Colin Raffel. 2022.
+\newblock \href {https://doi.org/10.1162/tacl_a_00461} {{ByT5}: Towards a
+  token-free future with pre-trained byte-to-byte models}.
+\newblock \emph{Transactions of the Association for Computational Linguistics},
+  10:291--306.
 
 \bibitem[{Yang et~al.(2024)Yang, Yang, Zhang, Hui, Zheng, Yu, Li, Liu, Huang,
   Wei et~al.}]{yang2024qwen2}

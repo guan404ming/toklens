@@ -318,13 +318,92 @@ MODEL_PARAMS_B = {
 }
 
 
+def load_training_tokens(path: str = "experiments/training_tokens.json"):
+    """Load per-model training-token counts (in trillions) and imputation flags."""
+    with open(path) as f:
+        data = json.load(f)
+    return data["models"]
+
+
+# Map HF id -> Qtok label used in experiments/qtok_outputs/*.tsv
+HF_TO_QTOK_LABEL = {
+    "Qwen/Qwen2.5-3B": "qwen25",
+    "Qwen/Qwen2.5-7B": "qwen25",
+    "Qwen/Qwen2.5-14B": "qwen25",
+    "meta-llama/Llama-3.1-8B": "llama31_8b",
+    "microsoft/phi-4": "phi4",
+    "google/gemma-2-9b": "gemma2_9b",
+    "mistralai/Mistral-7B-v0.3": "mistral_7b_v03",
+}
+
+
+def load_qtok_allocations(qtok_dir: str = "experiments/qtok_outputs") -> dict:
+    """Build per-(qtok_label, lang) vocabulary allocation % from Qtok's TSVs.
+
+    Returns dict: {qtok_label: {lang: percent}} where percent estimates the
+    fraction of the tokenizer's *vocabulary* devoted to that language's
+    script. Used as a tokenizer-training-data proxy in the LME analysis.
+    """
+    latin = pd.read_csv(f"{qtok_dir}/latin_stats.tsv", sep="\t").set_index("Tokenizer")
+    uni = pd.read_csv(f"{qtok_dir}/unicode_stats.tsv", sep="\t").set_index("Tokenizer")
+
+    def _sum_cols(df: pd.DataFrame, label: str, cols: list[str]) -> float:
+        if label not in df.index:
+            return float("nan")
+        present = [c for c in cols if c in df.columns]
+        if not present:
+            return float("nan")
+        return float(df.loc[label, present].sum())
+
+    def cjk_pct(label):
+        return _sum_cols(uni, label, ["CJK (spaced)", "CJK (inner)", "CJK (char)"])
+
+    def hangul_pct(label):
+        return _sum_cols(uni, label, ["HANGUL (spaced)", "HANGUL (char)"])
+
+    def arabic_pct(label):
+        return _sum_cols(uni, label, ["ARABIC (inner)", "ARABIC (spaced)"])
+
+    def thai_pct(label):
+        return _sum_cols(uni, label, ["THAI (inner)"])
+
+    def devanagari_pct(label):
+        return _sum_cols(uni, label, ["DEVANAGARI (spaced)", "DEVANAGARI (inner)"])
+
+    def latin_lang_pct(label, lang):
+        if label in latin.index and lang in latin.columns:
+            return float(latin.loc[label, lang])
+        return float("nan")
+
+    out: dict[str, dict[str, float]] = {}
+    for label in set(latin.index) | set(uni.index):
+        out[label] = {
+            "en": latin_lang_pct(label, "en"),
+            "fr": latin_lang_pct(label, "fr"),
+            "de": latin_lang_pct(label, "de"),
+            "es": latin_lang_pct(label, "es"),
+            "pt": latin_lang_pct(label, "pt"),
+            "zh": cjk_pct(label),
+            "ja": cjk_pct(label),  # Qtok aggregates Hiragana/Katakana under CJK/Other
+            "ko": hangul_pct(label),
+            "ar": arabic_pct(label),
+            "th": thai_pct(label),
+            "hi": devanagari_pct(label),
+        }
+    return out
+
+
 def build_lme_dataframe() -> pd.DataFrame:
     """Build a long-format DataFrame for mixed-effects modeling.
 
     Each row = one (model, language) pair with columns:
-    model, lang, log_params, score, fertility, cpt, compression_ratio, strr, nsl, parity
+    model, lang, log_params, log_train_tokens, train_tokens_imputed,
+    qtok_alloc, log1p_qtok_alloc,
+    score, fertility, cpt, compression_ratio, strr, nsl, parity
     """
     toklens = load_toklens()
+    train_tokens = load_training_tokens()
+    qtok_alloc = load_qtok_allocations()
     metric_names = ["fertility", "cpt", "compression_ratio", "strr", "nsl", "parity"]
 
     rows = []
@@ -332,15 +411,24 @@ def build_lme_dataframe() -> pd.DataFrame:
         if hf_name not in toklens or "error" in toklens[hf_name]:
             continue
         params_b = MODEL_PARAMS_B[hf_name]
+        tt = train_tokens.get(hf_name, {})
+        tokens_T = tt.get("tokens_T")
+        imputed = tt.get("imputed", False)
+        qlabel = HF_TO_QTOK_LABEL.get(hf_name)
         for lang in SHARED_LANGS:
             score = lang_scores.get(lang)
             if score is None:
                 continue
             metrics = toklens[hf_name]["metrics"].get(lang, {})
+            qa = qtok_alloc.get(qlabel, {}).get(lang) if qlabel else None
             row = {
                 "model": hf_name,
                 "lang": lang,
                 "log_params": np.log(params_b),
+                "log_train_tokens": np.log(tokens_T) if tokens_T else np.nan,
+                "train_tokens_imputed": bool(imputed),
+                "qtok_alloc": qa,
+                "log1p_qtok_alloc": np.log1p(qa) if qa is not None and not np.isnan(qa) else np.nan,
                 "score": score,
             }
             for m in metric_names:
@@ -350,35 +438,23 @@ def build_lme_dataframe() -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def run_lme_analysis(
-    output_csv="experiments/multilingual_lme_results.csv",
-    output_json="experiments/multilingual_lme_results.json",
-):
-    """Run linear mixed-effects models: score ~ metric + log_params + (1|model).
-
-    For each TokLens metric, fits a separate model with:
-    - Fixed effects: z-scored metric + log(params)
-    - Random intercept: model identity
-    This properly handles the non-independence of repeated measures per model.
-    """
-    df = build_lme_dataframe()
-    metric_names = ["fertility", "cpt", "compression_ratio", "strr", "nsl", "parity"]
-
+def _fit_lme(df: pd.DataFrame, metric_names: list[str], formula: str, label: str) -> list[dict]:
+    """Fit one LME per metric using the given formula. Returns one dict per metric."""
+    base_cols = ["model", "lang", "log_params", "log_train_tokens", "log1p_qtok_alloc", "score"]
+    results = []
     print()
     print("=" * 70)
-    print("Analysis 4: Linear Mixed-Effects Models")
-    print("  score ~ z(metric) + log_params + (1 | model)")
-    print(f"  n = {len(df)} observations, {df['model'].nunique()} models, "
-          f"{df['lang'].nunique()} languages")
+    print(f"  {label}")
+    print(f"  formula: {formula}")
+    print(f"  n_obs={len(df)}  n_models={df['model'].nunique()}  "
+          f"n_langs={df['lang'].nunique()}")
     print("=" * 70)
-
-    results = []
     for metric in metric_names:
-        sub = df[["model", "lang", "log_params", "score", metric]].dropna()
+        cols = [c for c in base_cols if c in df.columns] + [metric]
+        sub = df[cols].dropna()
         if len(sub) < 10:
             continue
 
-        # Z-score the metric for interpretable coefficients
         m_mean, m_std = sub[metric].mean(), sub[metric].std()
         if m_std < 1e-10:
             continue
@@ -386,71 +462,148 @@ def run_lme_analysis(
         sub["z_metric"] = (sub[metric] - m_mean) / m_std
 
         try:
-            model = smf.mixedlm(
-                "score ~ z_metric + log_params",
-                data=sub,
-                groups=sub["model"],
-            )
-            fit = model.fit(reml=True)
-
+            fit = smf.mixedlm(formula, data=sub, groups=sub["model"]).fit(reml=True)
             coef = fit.params["z_metric"]
             se = fit.bse["z_metric"]
             z_val = fit.tvalues["z_metric"]
             p_val = fit.pvalues["z_metric"]
-
-            # Also extract log_params effect
-            coef_lp = fit.params["log_params"]
-            p_lp = fit.pvalues["log_params"]
-
-            # Random effect variance
             re_var = float(fit.cov_re.iloc[0, 0])
 
-            sig = "***" if p_val < 0.001 else "**" if p_val < 0.01 else "*" if p_val < 0.05 else ""
-            print(
-                f"  {metric:20s} beta={coef:+.3f} SE={se:.3f} z={z_val:+.3f} "
-                f"p={p_val:.4f} {sig:4s}"
-                f"  log_params: beta={coef_lp:+.3f} p={p_lp:.4f}"
-                f"  RE_var={re_var:.2f}"
-            )
-
-            results.append({
+            row = {
+                "label": label,
                 "metric": metric,
                 "beta": round(float(coef), 4),
                 "se": round(float(se), 4),
                 "z": round(float(z_val), 4),
                 "p": round(float(p_val), 6),
-                "log_params_beta": round(float(coef_lp), 4),
-                "log_params_p": round(float(p_lp), 6),
                 "re_variance": round(re_var, 4),
                 "n_obs": len(sub),
                 "n_models": sub["model"].nunique(),
                 "n_langs": sub["lang"].nunique(),
                 "aic": round(float(fit.aic), 2),
                 "bic": round(float(fit.bic), 2),
+            }
+            for cov in ("log_params", "log_train_tokens", "log1p_qtok_alloc"):
+                if cov in fit.params.index:
+                    row[f"{cov}_beta"] = round(float(fit.params[cov]), 4)
+                    row[f"{cov}_p"] = round(float(fit.pvalues[cov]), 6)
+
+            sig = "***" if p_val < 0.001 else "**" if p_val < 0.01 else "*" if p_val < 0.05 else ""
+            extras = []
+            if "log_params_beta" in row:
+                extras.append(f"log_params: beta={row['log_params_beta']:+.3f} p={row['log_params_p']:.4f}")
+            if "log_train_tokens_beta" in row:
+                extras.append(f"log_tt: beta={row['log_train_tokens_beta']:+.3f} p={row['log_train_tokens_p']:.4f}")
+            if "log1p_qtok_alloc_beta" in row:
+                extras.append(f"log_qa: beta={row['log1p_qtok_alloc_beta']:+.3f} p={row['log1p_qtok_alloc_p']:.4f}")
+            print(
+                f"    {metric:20s} beta={coef:+.3f} SE={se:.3f} z={z_val:+.3f} "
+                f"p={p_val:.4f} {sig:4s}  " + "  ".join(extras) +
+                f"  RE_var={re_var:.2f}"
+            )
+            results.append(row)
+        except Exception as e:
+            print(f"    {metric:20s} FAILED: {e}")
+    return results
+
+
+def run_lme_analysis(
+    output_csv="experiments/multilingual_lme_results.csv",
+    output_json="experiments/multilingual_lme_results.json",
+):
+    """Run LME models with four specifications:
+    M1: score ~ z(metric) + log_params + (1|model)
+    M2: + log_train_tokens (full)
+    M3: + log_train_tokens (drop imputed)
+    M4: + log1p(qtok_alloc) as tokenizer-training-data proxy
+    """
+    df = build_lme_dataframe()
+    metric_names = ["fertility", "cpt", "compression_ratio", "strr", "nsl", "parity"]
+
+    m1 = _fit_lme(df, metric_names,
+                  "score ~ z_metric + log_params",
+                  "M1: original (params only)")
+    m2 = _fit_lme(df, metric_names,
+                  "score ~ z_metric + log_params + log_train_tokens",
+                  "M2: + log(training_tokens)  [includes imputed]")
+    df_clean = df[~df["train_tokens_imputed"]]
+    m3 = _fit_lme(df_clean, metric_names,
+                  "score ~ z_metric + log_params + log_train_tokens",
+                  "M3: + log(training_tokens)  [excluding imputed]")
+    m4 = _fit_lme(df, metric_names,
+                  "score ~ z_metric + log_params + log1p_qtok_alloc",
+                  "M4: + log1p(qtok_alloc)  [vocab-derived tokenizer-data proxy]")
+
+    # Leave-one-language-out cross-validation on M1 spec, focused on STRR.
+    print()
+    print("=" * 70)
+    print("  LOLO: leave-one-language-out CV on M1 (STRR)")
+    print("=" * 70)
+    lolo_rows = []
+    for held_out in sorted(df["lang"].unique()):
+        sub_df = df[df["lang"] != held_out]
+        cols = ["model", "lang", "log_params", "score", "strr"]
+        sub = sub_df[cols].dropna()
+        if len(sub) < 10:
+            continue
+        m_mean, m_std = sub["strr"].mean(), sub["strr"].std()
+        if m_std < 1e-10:
+            continue
+        sub = sub.copy()
+        sub["z_metric"] = (sub["strr"] - m_mean) / m_std
+        try:
+            fit = smf.mixedlm(
+                "score ~ z_metric + log_params",
+                data=sub,
+                groups=sub["model"],
+            ).fit(reml=True)
+            beta = float(fit.params["z_metric"])
+            z_val = float(fit.tvalues["z_metric"])
+            p_val = float(fit.pvalues["z_metric"])
+            sig = "***" if p_val < 0.001 else "**" if p_val < 0.01 else "*" if p_val < 0.05 else ""
+            print(f"    held_out={held_out:3s} n={len(sub):3d}  STRR beta={beta:+.3f} z={z_val:+.3f} p={p_val:.4f} {sig}")
+            lolo_rows.append({
+                "held_out_lang": held_out, "metric": "strr",
+                "beta": round(beta, 4), "z": round(z_val, 4), "p": round(p_val, 6),
+                "n_obs": int(len(sub)),
             })
         except Exception as e:
-            print(f"  {metric:20s} FAILED: {e}")
+            print(f"    held_out={held_out}: FAILED {e}")
 
-    if results:
+    all_rows = m1 + m2 + m3 + m4
+    if all_rows:
+        all_keys = list(dict.fromkeys(k for r in all_rows for k in r))
         with open(output_csv, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=list(results[0].keys()))
+            writer = csv.DictWriter(f, fieldnames=all_keys, extrasaction="ignore")
             writer.writeheader()
-            writer.writerows(results)
+            writer.writerows(all_rows)
         print(f"\n  CSV saved to {output_csv}")
 
         summary = {
             "method": "Linear Mixed-Effects Model (REML)",
-            "formula": "score ~ z(metric) + log(params_b) + (1 | model)",
-            "n_obs": len(df),
-            "n_models": df["model"].nunique(),
+            "specifications": {
+                "M1": "score ~ z(metric) + log(params_b) + (1 | model)",
+                "M2": "score ~ z(metric) + log(params_b) + log(train_tokens_T) + (1 | model)  [all rows; mistral imputed]",
+                "M3": "score ~ z(metric) + log(params_b) + log(train_tokens_T) + (1 | model)  [imputed rows removed]",
+                "M4": "score ~ z(metric) + log(params_b) + log1p(qtok_alloc_pct) + (1 | model)  [Qtok per-(model,lang) vocab allocation as tokenizer-training-data proxy]",
+            },
+            "n_obs_full": len(df),
+            "n_obs_clean": len(df_clean),
+            "n_obs_qtok": int(df["log1p_qtok_alloc"].notna().sum()),
+            "n_models_full": df["model"].nunique(),
+            "n_models_clean": df_clean["model"].nunique(),
             "n_langs": df["lang"].nunique(),
-            "results": results,
+            "M1": m1,
+            "M2": m2,
+            "M3": m3,
+            "M4": m4,
+            "LOLO_strr": lolo_rows,
         }
         with open(output_json, "w") as f:
             json.dump(summary, f, indent=2)
         print(f"  JSON saved to {output_json}")
 
-    return results
+    return all_rows
 
 
 if __name__ == "__main__":

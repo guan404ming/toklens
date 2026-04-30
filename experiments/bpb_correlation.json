@@ -1,0 +1,158 @@
+{
+  "n_models": 7,
+  "bpb_table": [
+    {
+      "model": "Qwen/Qwen2.5-3B",
+      "bpb": 0.6755132595489742,
+      "params_b": 3.1,
+      "log_params": 1.1314021114911006,
+      "fertility": 1.566638330027392,
+      "cpt": 5.093870829156523,
+      "compression_ratio": 5.098095374480883,
+      "strr": 0.635590818928875,
+      "nsl": 0.19631436161988164
+    },
+    {
+      "model": "mistralai/Mistral-7B-v0.3",
+      "bpb": 0.6095174301300553,
+      "params_b": 7.2,
+      "log_params": 1.9740810260220096,
+      "fertility": 1.4761499952772268,
+      "cpt": 4.413487189031578,
+      "compression_ratio": 4.41714746572368,
+      "strr": 0.7305185604987249,
+      "nsl": 0.22657820384869484
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B",
+      "bpb": 0.5718950422994823,
+      "params_b": 8.0,
+      "log_params": 2.0794415416798357,
+      "fertility": 1.5539812978180787,
+      "cpt": 5.142103361040839,
+      "compression_ratio": 5.146367907481026,
+      "strr": 0.6357797298573723,
+      "nsl": 0.19447294808900634
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "bpb": 0.5832647375800909,
+      "params_b": 7.6,
+      "log_params": 2.028148247292285,
+      "fertility": 1.566638330027392,
+      "cpt": 5.093870829156523,
+      "compression_ratio": 5.098095374480883,
+      "strr": 0.635590818928875,
+      "nsl": 0.19631436161988164
+    },
+    {
+      "model": "google/gemma-2-9b",
+      "bpb": 1.3395486741260203,
+      "params_b": 9.0,
+      "log_params": 2.1972245773362196,
+      "fertility": 1.4168319637291018,
+      "cpt": 5.181804938451453,
+      "compression_ratio": 5.186102410954913,
+      "strr": 0.7287239066780014,
+      "nsl": 0.1929829493540996
+    },
+    {
+      "model": "Qwen/Qwen2.5-14B",
+      "bpb": 0.3987614117009837,
+      "params_b": 14.8,
+      "log_params": 2.6946271807700692,
+      "fertility": 1.566638330027392,
+      "cpt": 5.093870829156523,
+      "compression_ratio": 5.098095374480883,
+      "strr": 0.635590818928875,
+      "nsl": 0.19631436161988164
+    },
+    {
+      "model": "microsoft/phi-4",
+      "bpb": 0.5738213975846215,
+      "params_b": 14.7,
+      "log_params": 2.6878474937846906,
+      "fertility": 1.554642486067819,
+      "cpt": 5.140988582165053,
+      "compression_ratio": 5.145252204075733,
+      "strr": 0.6356852743931236,
+      "nsl": 0.19451511786452258
+    }
+  ],
+  "correlations_with_bpb_full": [
+    {
+      "metric": "fertility",
+      "spearman_r": -0.4077,
+      "spearman_p": 0.363942,
+      "n": 7
+    },
+    {
+      "metric": "cpt",
+      "spearman_r": 0.0741,
+      "spearman_p": 0.874507,
+      "n": 7
+    },
+    {
+      "metric": "compression_ratio",
+      "spearman_r": 0.0741,
+      "spearman_p": 0.874507,
+      "n": 7
+    },
+    {
+      "metric": "strr",
+      "spearman_r": 0.3336,
+      "spearman_p": 0.464697,
+      "n": 7
+    },
+    {
+      "metric": "nsl",
+      "spearman_r": -0.0741,
+      "spearman_p": 0.874507,
+      "n": 7
+    }
+  ],
+  "correlations_with_bpb_no_gemma": [
+    {
+      "metric": "fertility",
+      "spearman_r": -0.0304,
+      "spearman_p": 0.954476,
+      "n": 6
+    },
+    {
+      "metric": "cpt",
+      "spearman_r": -0.5161,
+      "spearman_p": 0.294584,
+      "n": 6
+    },
+    {
+      "metric": "compression_ratio",
+      "spearman_r": -0.5161,
+      "spearman_p": 0.294584,
+      "n": 6
+    },
+    {
+      "metric": "strr",
+      "spearman_r": 0.0304,
+      "spearman_p": 0.954476,
+      "n": 6
+    },
+    {
+      "metric": "nsl",
+      "spearman_r": 0.5161,
+      "spearman_p": 0.294584,
+      "n": 6
+    }
+  ],
+  "bpb_vs_log_params": {
+    "all": {
+      "spearman_r": -0.5714,
+      "spearman_p": 0.180202,
+      "n": 7
+    },
+    "no_gemma": {
+      "spearman_r": -0.9429,
+      "spearman_p": 0.004805,
+      "n": 6
+    }
+  }
+}

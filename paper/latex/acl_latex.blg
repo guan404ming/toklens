@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2025)
+This is BibTeX, Version 0.99e (TeX Live 2026)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: acl_latex.aux
 The style file: acl_natbib.bst
@@ -9,44 +9,44 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: custom.bib
-You've used 18 entries,
+You've used 21 entries,
             3764 wiz_defined-function locations,
-            832 strings with 10497 characters,
-and the built_in function-call counts, 16228 in all, are:
-= -- 1352
-> -- 1012
+            845 strings with 11245 characters,
+and the built_in function-call counts, 18960 in all, are:
+= -- 1562
+> -- 1215
 < -- 11
-+ -- 422
-- -- 317
-* -- 1122
-:= -- 2398
-add.period$ -- 78
-call.type$ -- 18
-change.case$ -- 210
-chr.to.int$ -- 19
-cite$ -- 18
-duplicate$ -- 936
-empty$ -- 1006
-format.name$ -- 366
-if$ -- 3471
++ -- 506
+- -- 380
+* -- 1328
+:= -- 2807
+add.period$ -- 90
+call.type$ -- 21
+change.case$ -- 248
+chr.to.int$ -- 22
+cite$ -- 21
+duplicate$ -- 1085
+empty$ -- 1164
+format.name$ -- 438
+if$ -- 4035
 int.to.chr$ -- 1
 int.to.str$ -- 5
-missing$ -- 221
-newline$ -- 94
-num.names$ -- 72
-pop$ -- 596
+missing$ -- 261
+newline$ -- 109
+num.names$ -- 84
+pop$ -- 706
 preamble$ -- 1
-purify$ -- 176
+purify$ -- 209
 quote$ -- 0
-skip$ -- 831
+skip$ -- 958
 stack$ -- 0
-substring$ -- 463
-swap$ -- 525
-text.length$ -- 16
+substring$ -- 522
+swap$ -- 608
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 189
 warning$ -- 0
-while$ -- 75
+while$ -- 86
 width$ -- 0
-write$ -- 234
+write$ -- 271

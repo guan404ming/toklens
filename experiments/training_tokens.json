@@ -1,0 +1,40 @@
+{
+  "_doc": "Pretraining token counts for the 7 models used in the multilingual LME analysis. Values are in trillions (T = 1e12). 'source' cites where the number was reported. 'imputed' = true when the value is not publicly disclosed and a best-guess is used; the LME pipeline runs a sensitivity analysis dropping these rows.",
+  "models": {
+    "Qwen/Qwen2.5-3B": {
+      "tokens_T": 18.0,
+      "imputed": false,
+      "source": "Qwen2.5 Technical Report (arXiv:2412.15115): pretraining data scaled to 18T tokens for the family."
+    },
+    "Qwen/Qwen2.5-7B": {
+      "tokens_T": 18.0,
+      "imputed": false,
+      "source": "Qwen2.5 Technical Report (arXiv:2412.15115)."
+    },
+    "Qwen/Qwen2.5-14B": {
+      "tokens_T": 18.0,
+      "imputed": false,
+      "source": "Qwen2.5 Technical Report (arXiv:2412.15115)."
+    },
+    "meta-llama/Llama-3.1-8B": {
+      "tokens_T": 15.0,
+      "imputed": false,
+      "source": "The Llama 3 Herd of Models (arXiv:2407.21783): ~15T tokens across the 8B/70B/405B family."
+    },
+    "microsoft/phi-4": {
+      "tokens_T": 9.8,
+      "imputed": false,
+      "source": "Phi-4 Technical Report (arXiv:2412.08905): ~9.8T tokens of curated and synthetic data."
+    },
+    "google/gemma-2-9b": {
+      "tokens_T": 8.0,
+      "imputed": false,
+      "source": "Gemma 2 Technical Report (arXiv:2408.00118), Table on training data: 8T tokens for the 9B model."
+    },
+    "mistralai/Mistral-7B-v0.3": {
+      "tokens_T": 8.0,
+      "imputed": true,
+      "source": "Not publicly disclosed; imputed at 8T (consistent with contemporaneous open-7B models). Sensitivity analysis re-runs LME with this row removed."
+    }
+  }
+}

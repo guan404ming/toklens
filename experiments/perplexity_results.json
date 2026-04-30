@@ -1,0 +1,77 @@
+{
+  "corpus": "wikitext-2-raw-v1 test (first ~60K chars)",
+  "metric": "bits per byte (with tokenizer BOS prepended)",
+  "n_models": 7,
+  "results": [
+    {
+      "model": "Qwen/Qwen2.5-3B",
+      "n_bytes": 60190,
+      "n_tokens": 14862,
+      "n_target": 14858,
+      "nll_total_nats": 28182.770398378372,
+      "nll_per_token_nats": 1.896807807132748,
+      "bpb": 0.6755132595489742,
+      "elapsed_s": 14.397951126098633
+    },
+    {
+      "model": "mistralai/Mistral-7B-v0.3",
+      "n_bytes": 60190,
+      "n_tokens": 16287,
+      "n_target": 16283,
+      "nll_total_nats": 25429.389496564865,
+      "nll_per_token_nats": 1.5617140266882557,
+      "bpb": 0.6095174301300553,
+      "elapsed_s": 21.86079502105713
+    },
+    {
+      "model": "meta-llama/Llama-3.1-8B",
+      "n_bytes": 60190,
+      "n_tokens": 14113,
+      "n_target": 14109,
+      "nll_total_nats": 23859.763581633568,
+      "nll_per_token_nats": 1.691102387244565,
+      "bpb": 0.5718950422994823,
+      "elapsed_s": 25.299896955490112
+    },
+    {
+      "model": "Qwen/Qwen2.5-7B",
+      "n_bytes": 60190,
+      "n_tokens": 14862,
+      "n_target": 14858,
+      "nll_total_nats": 24334.11328101158,
+      "nll_per_token_nats": 1.637778522076429,
+      "bpb": 0.5832647375800909,
+      "elapsed_s": 23.434122323989868
+    },
+    {
+      "model": "google/gemma-2-9b",
+      "n_bytes": 60190,
+      "n_tokens": 14428,
+      "n_target": 14424,
+      "nll_total_nats": 55886.67903506756,
+      "nll_per_token_nats": 3.874561774477784,
+      "bpb": 1.3395486741260203,
+      "elapsed_s": 78.73619151115417
+    },
+    {
+      "model": "Qwen/Qwen2.5-14B",
+      "n_bytes": 60190,
+      "n_tokens": 14862,
+      "n_target": 14858,
+      "nll_total_nats": 16636.536960363388,
+      "nll_per_token_nats": 1.1197023125833483,
+      "bpb": 0.3987614117009837,
+      "elapsed_s": 57.440568923950195
+    },
+    {
+      "model": "microsoft/phi-4",
+      "n_bytes": 60190,
+      "n_tokens": 14143,
+      "n_target": 14139,
+      "nll_total_nats": 23940.13214278221,
+      "nll_per_token_nats": 1.6931983975374645,
+      "bpb": 0.5738213975846215,
+      "elapsed_s": 42.10182523727417
+    }
+  ]
+}
