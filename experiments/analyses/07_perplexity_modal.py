@@ -205,7 +205,7 @@ def main():
         else:
             print(f"  {r['model']:32s}  BPB={r['bpb']:.4f}  ({r['elapsed_s']:.0f}s)")
 
-    out_path = REPO_ROOT / "experiments" / "perplexity_results.json"
+    out_path = REPO_ROOT / "experiments" / "data" / "perplexity_results.json"
     with open(out_path, "w") as f:
         json.dump({
             "corpus": "wikitext-2-raw-v1 test (first ~60K chars)",

@@ -22,9 +22,9 @@ EN_METRICS = ["fertility", "cpt", "compression_ratio", "strr", "nsl"]
 
 
 def main():
-    with open(REPO_ROOT / "experiments/perplexity_results.json") as f:
+    with open(REPO_ROOT / "experiments/data/perplexity_results.json") as f:
         ppl = json.load(f)
-    with open(REPO_ROOT / "experiments/toklens_results.json") as f:
+    with open(REPO_ROOT / "experiments/data/toklens_results.json") as f:
         toklens = json.load(f)
 
     PARAMS_B = {
@@ -100,7 +100,7 @@ def main():
         "correlations_with_bpb_no_gemma": nogemma_corrs,
         "bpb_vs_log_params": bpb_vs_size,
     }
-    out_path = REPO_ROOT / "experiments/bpb_correlation.json"
+    out_path = REPO_ROOT / "experiments/data/bpb_correlation.json"
     with open(out_path, "w") as f:
         json.dump(summary, f, indent=2)
     print(f"\nSaved {out_path}")

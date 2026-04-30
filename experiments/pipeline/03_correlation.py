@@ -1,7 +1,7 @@
 """Step 3: Correlation analysis between TokLens metrics and benchmarks.
 
-Input: experiments/toklens_results.json, experiments/benchmark_scores.json
-Output: experiments/correlations.csv, experiments/correlations.json
+Input: experiments/data/toklens_results.json, experiments/data/benchmark_scores.json
+Output: experiments/data/correlations.csv, experiments/data/correlations.json
 """
 
 from __future__ import annotations
@@ -14,9 +14,9 @@ from scipy import stats
 
 
 def load_data() -> tuple[dict, dict]:
-    with open("experiments/toklens_results.json") as f:
+    with open("experiments/data/toklens_results.json") as f:
         toklens = json.load(f)
-    with open("experiments/benchmark_scores.json") as f:
+    with open("experiments/data/benchmark_scores.json") as f:
         benchmarks = json.load(f)
     return toklens, benchmarks
 
@@ -83,8 +83,8 @@ def _partial_correlation(x: np.ndarray, y: np.ndarray, z: np.ndarray) -> tuple[f
 
 
 def compute_correlations(
-    output_csv: str = "experiments/correlations.csv",
-    output_json: str = "experiments/correlations.json",
+    output_csv: str = "experiments/data/correlations.csv",
+    output_json: str = "experiments/data/correlations.json",
 ) -> dict:
     """Compute Spearman and Pearson correlations with p-values."""
     toklens, benchmarks = load_data()

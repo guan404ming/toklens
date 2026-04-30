@@ -3,7 +3,7 @@
 Downloads leaderboard data and extracts scores for our target models.
 
 Input: None (downloads from HuggingFace)
-Output: experiments/benchmark_scores.json
+Output: experiments/data/benchmark_scores.json
 Source: https://huggingface.co/datasets/open-llm-leaderboard/contents
 """
 
@@ -16,7 +16,7 @@ from datasets import load_dataset
 from experiments.config import BENCHMARK_COLUMNS, TOKENIZERS
 
 
-def collect_benchmarks(output_path: str = "experiments/benchmark_scores.json") -> dict:
+def collect_benchmarks(output_path: str = "experiments/data/benchmark_scores.json") -> dict:
     """Download leaderboard and extract scores for our tokenizers."""
     print("Loading Open LLM Leaderboard v2...")
     ds = load_dataset("open-llm-leaderboard/contents", split="train")

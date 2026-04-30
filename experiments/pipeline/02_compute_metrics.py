@@ -1,7 +1,7 @@
 """Step 2: Compute TokLens metrics on all tokenizers across all languages.
 
 Input: None (downloads tokenizers from HF, Wikipedia from HF datasets)
-Output: experiments/toklens_results.json, experiments/toklens_results.csv
+Output: experiments/data/toklens_results.json, experiments/data/toklens_results.csv
 """
 
 from __future__ import annotations
@@ -62,8 +62,8 @@ def _load_tokenizer(hf_name: str, tokenizer_source: str | None) -> Tokenizer:
 
 
 def compute_all_metrics(
-    output_json: str = "experiments/toklens_results.json",
-    output_csv: str = "experiments/toklens_results.csv",
+    output_json: str = "experiments/data/toklens_results.json",
+    output_csv: str = "experiments/data/toklens_results.csv",
 ) -> dict:
     """Compute all TokLens metrics for every tokenizer x language pair."""
     print(f"Loading Wikipedia texts for {len(LANGS)} languages...")

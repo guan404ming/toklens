@@ -1,7 +1,7 @@
 """Step 4: Generate publication-quality figures.
 
-Input: experiments/toklens_results.json, experiments/benchmark_scores.json,
-       experiments/correlations.json
+Input: experiments/data/toklens_results.json, experiments/data/benchmark_scores.json,
+       experiments/data/correlations.json
 Output: experiments/figures/*.pdf
 """
 
@@ -60,11 +60,11 @@ METRIC_LABELS = {
 
 
 def load_all():
-    with open("experiments/toklens_results.json") as f:
+    with open("experiments/data/toklens_results.json") as f:
         toklens = json.load(f)
-    with open("experiments/benchmark_scores.json") as f:
+    with open("experiments/data/benchmark_scores.json") as f:
         benchmarks = json.load(f)
-    with open("experiments/correlations.json") as f:
+    with open("experiments/data/correlations.json") as f:
         correlations = json.load(f)
     return toklens, benchmarks, correlations
 
@@ -392,7 +392,7 @@ def fig7_vocab_size_vs_avg(
 def fig10_slope_vs_metric(
     toklens: dict,
     save_path: str = "experiments/figures/fig10_slope_vs_metric.pdf",
-    qwen_scaling_path: str = "experiments/qwen_scaling_analysis.json",
+    qwen_scaling_path: str = "experiments/data/qwen_scaling_analysis.json",
     qwen_tok_id: str = "Qwen/Qwen2.5-7B",
 ):
     """Figure 10: per-language Qwen2.5 scaling slope vs three TokLens metrics

@@ -68,18 +68,18 @@ SHARED_LANGS = ["en", "zh", "ja", "ko", "fr", "de", "es", "pt", "ar", "th", "hi"
 
 
 def load_toklens():
-    with open("experiments/toklens_results.json") as f:
+    with open("experiments/data/toklens_results.json") as f:
         return json.load(f)
 
 
 def load_benchmarks():
-    with open("experiments/benchmark_scores.json") as f:
+    with open("experiments/data/benchmark_scores.json") as f:
         return json.load(f)
 
 
 def compute_per_language_correlations(
-    output_csv="experiments/multilingual_correlations.csv",
-    output_json="experiments/multilingual_correlations.json",
+    output_csv="experiments/data/multilingual_correlations.csv",
+    output_json="experiments/data/multilingual_correlations.json",
 ):
     """Correlate per-language TokLens metrics with per-language MMLU-ProX scores."""
     toklens = load_toklens()
@@ -318,7 +318,7 @@ MODEL_PARAMS_B = {
 }
 
 
-def load_training_tokens(path: str = "experiments/training_tokens.json"):
+def load_training_tokens(path: str = "experiments/data/training_tokens.json"):
     """Load per-model training-token counts (in trillions) and imputation flags."""
     with open(path) as f:
         data = json.load(f)
@@ -508,8 +508,8 @@ def _fit_lme(df: pd.DataFrame, metric_names: list[str], formula: str, label: str
 
 
 def run_lme_analysis(
-    output_csv="experiments/multilingual_lme_results.csv",
-    output_json="experiments/multilingual_lme_results.json",
+    output_csv="experiments/data/multilingual_lme_results.csv",
+    output_json="experiments/data/multilingual_lme_results.json",
 ):
     """Run LME models with four specifications:
     M1: score ~ z(metric) + log_params + (1|model)

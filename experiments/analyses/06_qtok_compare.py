@@ -180,7 +180,7 @@ def build_qtok_scalars(our_labels: set[str]) -> pd.DataFrame:
 
 def build_toklens_scalars(label_to_hf: dict[str, str]) -> pd.DataFrame:
     """Pull comparable scalars from TokLens results for ranking comparison."""
-    with open(REPO_ROOT / "experiments/toklens_results.json") as f:
+    with open(REPO_ROOT / "experiments/data/toklens_results.json") as f:
         data = json.load(f)
 
     rows = {}
@@ -260,7 +260,7 @@ def main():
         "toklens_scalars": tl.round(4).reset_index().rename(columns={"index": "tokenizer"}).to_dict(orient="records"),
         "ranking_correlations": pairs,
     }
-    out_path = REPO_ROOT / "experiments/qtok_compare.json"
+    out_path = REPO_ROOT / "experiments/data/qtok_compare.json"
     with open(out_path, "w") as f:
         json.dump(summary, f, indent=2)
     print(f"\nSaved {out_path}")

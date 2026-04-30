@@ -22,8 +22,8 @@ Run:
   modal run experiments/09_qwen_scaling_modal.py
 
 Output:
-  experiments/qwen_scaling_raw.json    -- per-(model, language) accuracy
-  experiments/qwen_scaling_analysis.json (overwritten with new slopes)
+  experiments/data/qwen_scaling_raw.json    -- per-(model, language) accuracy
+  experiments/data/qwen_scaling_analysis.json (overwritten with new slopes)
 """
 
 from __future__ import annotations
@@ -180,7 +180,7 @@ def main():
         )
         raw_results[model_id] = res
         # Save partial results after each model.
-        out_path = REPO_ROOT / "experiments/qwen_scaling_raw.json"
+        out_path = REPO_ROOT / "experiments/data/qwen_scaling_raw.json"
         out_path.write_text(json.dumps(raw_results, indent=2))
         print(f"Saved partial results to {out_path}")
 
@@ -205,7 +205,7 @@ def main():
         "source": "MMLU-ProX (li-lab/MMLU-ProX), evaluated locally via vLLM",
         "slopes": slopes,
     }
-    out_path = REPO_ROOT / "experiments/qwen_scaling_analysis.json"
+    out_path = REPO_ROOT / "experiments/data/qwen_scaling_analysis.json"
     out_path.write_text(json.dumps(analysis, indent=2))
     print(f"Saved {out_path}")
     for lang, info in slopes.items():
